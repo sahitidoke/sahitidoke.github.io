@@ -26,9 +26,7 @@ description = ""
 <li> lack of structure </li>
 <li> short form content </li>
 <li> unhygienic people </li>
-<li> chemistry </li>
-<li> thin crust pizza </li>
-<li> nuts in other things </li>
+
 
 
 
