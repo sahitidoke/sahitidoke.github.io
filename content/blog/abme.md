@@ -21,7 +21,7 @@ description = ""
 <li> loud noises </li>
 <li> epistemic pedantism </li>
 <li> cats </li>
-<li> myself </li>
+<li> myself one day ago </li>
 <li> sleeping in </li>
 <li> lack of structure </li>
 <li> short form content </li>
