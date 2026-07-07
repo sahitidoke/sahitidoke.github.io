@@ -35,8 +35,9 @@ description = ""
 <li> i am working on a statistics project about asymmetric contamination of graphical models. </li>
 <li> moving to emacs </li>
 <li> learning lean </li>
-<li> tinkering with SAEs and potentially evaluating it against J-Lens </li>
+<li> tinkering with SAEs and potentially evaluating it against J-Lens for my """lab"""" </li>
 <li> reading minor detail by adania shibli </li>
+<li> working on bringing ai safety to ucsb </li>
 
 <h3>things i want to work on</h3>
 <li> running a cafe </li>
