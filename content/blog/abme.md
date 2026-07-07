@@ -43,6 +43,7 @@ description = ""
 <li> moving to emacs </li>
 <li> learning lean </li>
 <li> tinkering with SAEs and potentially evaluating it against J-Lens for my """lab"""" </li>
+<li> working through <a href ="https://missing.csail.mit.edu/"> missing semester in cs </li>
 <li> reading minor detail by adania shibli </li>
 <li> bringing ai safety to ucsb </li>
 
