@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <p>
+    <a href="/blog/abme">about me</a> • 
+    <a href="/rss.xml" target="_blank"> RSS </a>
+  </p>
+
+  <ul class="blog-posts">
+    <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->  
+    {% for page in section.pages %}
+      {% if page.title not in ["about me"] %}
+
+        <li>
+          <span>
+            <i>
+              <time datetime={{ page.date }}>
+                {{ page.date }}
+              </time>
+            </i>
+          </span>
+          <a href="{{ page.permalink | safe }}"> {{ page.description }} {{ page.title }}</a>
+        </li>
+
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+{% endblock content %}
