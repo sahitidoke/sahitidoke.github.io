@@ -28,7 +28,7 @@ description = ""
 <li> unhygienic people </li>
 <li> chemistry </li>
 <li> thin crust pizza </li>
-<li> raisins in muesli </li>
+<li> nuts in other things </li>
 
 
 
