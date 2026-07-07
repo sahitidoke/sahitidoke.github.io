@@ -23,7 +23,7 @@ description = ""
 <li> cats </li>
 <li> myself </li>
 <li> sleeping in </li>
-<li> informal education </li>
+<li> lack of structure </li>
 <li> short form content </li>
 <li> unhygienic people </li>
 <li> chemistry </li>
