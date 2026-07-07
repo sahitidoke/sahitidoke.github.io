@@ -26,7 +26,7 @@ description = ""
 
 
 <h3>things i am neutral about </h3>
-<li> philosophy. i think it is interesting from far away and it is cool that there are people who take this seriously but i have trouble pondering over armchair philosophy with no external payoff.  </li>
+<li> philosophy. i appreciate it from afar and it is cool that there are people who take this seriously but i have trouble pondering over armchair philosophy with no external payoff.  </li>
 <li> religion. i think religion has immense value and i hope to learn more about it. for now, i am neutral, with an affinity for religion.</li>
 <li> meeting new people </li>
 
