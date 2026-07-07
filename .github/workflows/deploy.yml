@@ -16,6 +16,6 @@ jobs:
       - name: Build and deploy
         uses: getzola/github-pages@v1
         with:
-          zola_version: 0.22.1
+          zola_version: v0.22.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
