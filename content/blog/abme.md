@@ -8,8 +8,7 @@ description = ""
 <li> math (in particular, abstract algebra) </li>
 <li> understanding large language models  </li>
 <li> <i> realistic </i> horror films (my favorite is saw!) </li>
-<li> {psychological thriller, slice of life, shonen} anime </li>
-<li> vocaloid & jpop </li>
+<li> anime, vocaloid & jpop </li>
 <li> the game, <a href = "https://setwithfriends.com/"> set </a></li>
 <li> playing rhythm games (mostly project sekai)</li>
 <li> coffee </li>
