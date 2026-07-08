@@ -3,27 +3,18 @@ title = "vibes"
 date = 2026-07-08
 +++
 
+<div class="scrapbook">
 
 <!-- ENTRY START -->
-![alt text](/images/i1.png)
-
-
+<img src="/images/i1.png" alt="alt text">
 <!-- ENTRY END -->
-
-***
 
 <!-- ENTRY START -->
-![alt text](/images/i2.png)
-
-
+<img src="/images/i2.png" alt="alt text">
 <!-- ENTRY END -->
-
-***
 
 <!-- ENTRY START -->
-![alt text](/images/rage-comic-sword.png)
-
-
+<img src="/images/rage-comic-sword.png" alt="alt text">
 <!-- ENTRY END -->
 
-***
+</div>
