@@ -2,29 +2,30 @@
 
 {% block content %}
 
-  <p>
+   <p>
     <a href="/blog/abme">about me</a> • 
+    <a href = "/blog/vibes"> vibes </a>
     <a href="/rss.xml" target="_blank"> RSS </a>
+    
   </p>
 
-  <ul class="blog-posts">
-    <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->  
-    {% for page in section.pages %}
-      {% if page.title not in ["about me"] %}
+  <h3> things i've done </h3>
+  <li> barebones implementation of linear logic in java </li>
+  <li> system f implementation in java </li>
+  <li> improving interpretability of neural models via SAE/J-Lens as part of bionic vision lab (i'm only here to steal their gpu)</li>
+  <li> directed reading project on model theory and functional calculus</li>
+  <li> wrote a couple expository papers on hilbert's nullstellensatz, bonnet-myers' theorem, j-function</li>
+  <li> attempted to find a closed form for integer solutions of an elliptic curve as part of a summer program at wolfram (nothing burger) </li>
 
-        <li>
-          <span>
-            <i>
-              <time datetime={{ page.date }}>
-                {{ page.date }}
-              </time>
-            </i>
-          </span>
-          <a href="{{ page.permalink | safe }}"> {{ page.description }} {{ page.title }}</a>
-        </li>
+  <h3>
+    courses i've taken
+  </h3>
+  <li>group theory/ring theory/galois theory</li>
+ <li>differential geometry</li>
+  <li>ai alignment</li>
+  <li>type theory and logic</li>
+  <li>proof based linear algebra</li>
+  <li> algebraic combinatorics</li>
 
-      {% endif %}
-    {% endfor %}
-  </ul>
 
 {% endblock content %}
