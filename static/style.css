@@ -238,7 +238,5 @@ ul.blog-posts li span {
 }
 
 .scrapbook img {
-  height: 250px;      /* pick whatever row height you want */
-  width: auto;
   object-fit: cover;
 }
