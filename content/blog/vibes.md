@@ -10,7 +10,7 @@ date = 2026-07-08
 <!-- ENTRY END -->
 
 <!-- ENTRY START -->
-<img src="/images/i2.png" alt="alt text" width=10%>
+<img src="/images/i2.png" alt="alt text" width=200>
 <!-- ENTRY END -->
 
 <!-- ENTRY START -->
