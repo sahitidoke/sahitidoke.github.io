@@ -4,6 +4,11 @@ date = 2026-07-06
 description = ""
 +++
 
+   <p>
+    <a href = "/blog/vibes"> vibes </a> • 
+    <a href="/rss.xml" target="_blank"> RSS </a>
+  </p>
+  
 <h3>things i like </h3>
 <li> math (in particular, abstract algebra) </li>
 <li> understanding large language models  </li>
