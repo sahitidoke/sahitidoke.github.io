@@ -1,3 +1,9 @@
++++
+title = "vibes"
+date = 2026-07-08
++++
+
+
 <!-- ENTRY START -->
 ![alt text](images/i1.png)
 
