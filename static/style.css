@@ -234,3 +234,14 @@ ul.blog-posts li span {
   padding-bottom: 0.5em;
   padding-left: 1em;
 }
+.scrapbook {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.scrapbook img {
+  height: 250px;      /* pick whatever row height you want */
+  width: auto;
+  object-fit: cover;
+}
