@@ -5,7 +5,7 @@ date = 2026-07-08
 
 
 <!-- ENTRY START -->
-![alt text](static/images/i1.png)
+![alt text](/images/i1.png)
 
 
 <!-- ENTRY END -->
@@ -13,7 +13,7 @@ date = 2026-07-08
 ***
 
 <!-- ENTRY START -->
-![alt text](static/images/i2.png)
+![alt text](/images/i2.png)
 
 
 <!-- ENTRY END -->
@@ -21,7 +21,7 @@ date = 2026-07-08
 ***
 
 <!-- ENTRY START -->
-![alt text](static/images/rage-comic-sword.png)
+![alt text](/images/rage-comic-sword.png)
 
 
 <!-- ENTRY END -->
