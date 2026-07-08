@@ -2,6 +2,10 @@
 title = "vibes"
 date = 2026-07-08
 +++
+   <p>
+    <a href="/blog/abme">about me</a> • 
+    <a href="/rss.xml" target="_blank"> RSS </a>
+  </p>
 
 <div class="scrapbook">
 <img src="/images/i1.png" alt="alt text">
