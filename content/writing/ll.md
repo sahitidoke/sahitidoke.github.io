@@ -3,7 +3,9 @@ title = "various models of linear logic"
 date = 2026-07-10
 +++
 
-classical/intuitionistic logic is governed by a set of structural and logical rules. the logical rules comprise of modus ponens, $\wedge$, $\vee$, $\bot$. they are also governed by a set of structural rules like contraction, weakening and exchange. the rules for each are as follows: $$\frac{\Gamma, A, A \vdash \Delta}{\Gamma, A \vdash \Delta}, \quad  \frac{\Gamma \vdash \Delta}{\Gamma, A \vdash \Delta}  \quad , \frac{\Gamma, A, B, \Sigma \vdash \Delta}{\Gamma, B, A, \Sigma \vdash \Delta} $$,
+classical/intuitionistic logic is governed by a set of structural and logical rules. the logical rules comprise of modus ponens, $\wedge$, $\vee$, $\bot$. they are also governed by a set of structural rules like contraction, weakening and exchange. the rules for each are as follows: $$\frac{\Gamma, A, A \vdash \Delta}{\Gamma, A \vdash \Delta}, \quad  \frac{\Gamma \vdash \Delta}{\Gamma, A \vdash \Delta}  \quad , \frac{\Gamma, A, B, \Sigma \vdash \Delta}{\Gamma, B, A, \Sigma \vdash \Delta} $$.
+
+linear logic, however, refines the classical/intuitionistic logic by omitting the contraction and weakening rule. thus, linear logic strictly requires every premise to be used exactly once (there are ways to get around this though, as we will see later). 
 
 
 
