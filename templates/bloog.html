@@ -1,22 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <p>
-    The 🌱 posts are budding thoughts, while the 🌳 posts are more developed.
-  </p>
-
-  <p>
-    <a href="/blog/now">The 'Now' Page</a> • 
-    <a href="/blog/antilibrary">The Antilibrary</a> • 
-    <a href="/blog/failure-resume">A Failure Resume</a> •
-    <a href="/rss.xml" target="_blank"> RSS </a>
-  </p>
 
   <ul class="blog-posts">
     <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->  
     {% for page in section.pages %}
-      {% if page.title not in ['The Antilibrary', 'A Failure Resume', "The 'Now' Page"] %}
-
         <li>
           <span>
             <i>
@@ -25,7 +13,7 @@
               </time>
             </i>
           </span>
-          <a href="{{ page.permalink | safe }}"> {{ page.description }} {{ page.title }}</a>
+          <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
         </li>
 
       {% endif %}
