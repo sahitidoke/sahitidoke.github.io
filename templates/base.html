@@ -24,7 +24,10 @@
     <div class="header-links">
       <a href="/blog" style="margin-left: 20px;">portfolio</a>
      <div class="header-links">
-<a href="{{ get_section(path='writing/_index.md').permalink }}" style="margin-left: 20px;">blog</a>
+      {% set writing = get_section(path="writing/_index.md") %}
+
+    <a href="{{ writing.permalink }}" style="margin-left: 20px;">blog</a>
+
       
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
         <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
