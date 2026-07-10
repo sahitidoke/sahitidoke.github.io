@@ -2,20 +2,21 @@
 
 {% block content %}
 
-  <ul class="blog-posts">
-    <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->  
-    {% for page in section.pages %}
+{% set writing = get_section(path="writing/_index.md") %}
+
+<ul class="blog-posts">
+    {% for page in writing.pages %}
         <li>
-          <span>
-            <i>
-              <time datetime={{ page.date }}>
-                {{ page.date }}
-              </time>
-            </i>
-          </span>
-          <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+            <span>
+                <i>
+                    <time datetime="{{ page.date }}">
+                        {{ page.date }}
+                    </time>
+                </i>
+            </span>
+            <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
         </li>
     {% endfor %}
-  </ul>
+</ul>
 
 {% endblock content %}
