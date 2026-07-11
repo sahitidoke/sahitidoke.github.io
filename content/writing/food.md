@@ -1,4 +1,7 @@
-+++ title = "a guide to the bay" date = 2026-07-10 +++
++++
+title = "guide to the bay"
+date = 2026-07-10
++++
 
 food 
 
