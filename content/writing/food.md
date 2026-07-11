@@ -11,7 +11,8 @@ meals
 <li> ruby thai kitchen in valley fair mall </li>
 <li> ramen nagi in valley fair mall </li>
 <li> falafel stop in sunnyvale </li>
-<li> pizza antica in santana row</li>
+<li> pizza bocca lupo in san pedro square market, downtown sj </li>
+
 
 grab a bite
 
