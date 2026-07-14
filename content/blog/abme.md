@@ -44,7 +44,7 @@ description = ""
 <h3> things i am working on </h3>
 <li> a statistics project about asymmetric contamination of graphical models. </li>
 <li> implementing linear logic in lean </li>
-<li> tinkering with SAEs and potentially evaluating it against J-Lens for my """lab"""" </li>
+<li> tinkering with SAEs on SSMs for my """lab""""  </li>
 <li> working through <a href ="https://missing.csail.mit.edu/"> missing semester in cs </a></li>
 <li> working through <a href ="https://mlc.ai/modern-gpu-programming-for-mlsys/index.html"> gpu programming in mlsys </a></li>
 <li> reading minor detail by adania shibli </li>
