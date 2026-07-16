@@ -41,7 +41,7 @@ description = ""
 <li> meeting new people </li>
 
 
-<h3> things i am working on </h3>
+<h3> things i currently am thinking about </h3>
 <li> a statistics project about asymmetric contamination of graphical models. </li>
 <li> implementing linear logic in lean </li>
 <li> tinkering with SAEs on SSMs for my """lab""""  </li>
