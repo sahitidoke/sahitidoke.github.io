@@ -16,4 +16,7 @@ date = 2026-07-08
 <img src="/images/i5.png" alt="alt text">
    <img src="/images/i6.png" alt="alt text">
 <img src="/images/i7.png" alt="alt text">
+   <img src="/images/i8.png" alt="alt text">
+   <img src="/images/i9.jpg" alt="alt text">
+   <img src="/images/i10.jpg" alt="alt text">
 </div>
