@@ -1,13 +1,13 @@
 @import url('/flexoki.css');
 @font-face {
-  font-family: 'IBM Plex Sans';
-  src: url('/fonts/IBMPlexSans-Regular.ttf') format('truetype');
+  font-family: 'Encode Sans';
+  src: url('/fonts/EncodeSans.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'IBM Plex Sans';
-  src: url('/fonts/IBMPlexSans-Light.ttf') format('truetype');
+  font-family: 'Encode Sans';
+  src: url('/fonts/EncodeSans.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
@@ -192,11 +192,6 @@ ul.blog-posts li span {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   padding-left: 1em;
-}
-.scrapbook {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
 }
 .scrapbook img {
   height: 250px;
