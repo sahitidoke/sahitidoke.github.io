@@ -33,7 +33,7 @@ body, body * {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 body {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Encode Sans', sans-serif;
   margin: auto;
   padding: 20px;
   max-width: 720px;
