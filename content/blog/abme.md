@@ -24,6 +24,7 @@ description = ""
 
 <h3>things i dislike </h3>
 <li> loud noises </li>
+<li> incorrect usage of who/whom </li>
 <li> epistemic pedantism </li>
 <li> cats </li>
 <li> myself one day ago </li>
