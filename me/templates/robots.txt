@@ -1,7 +1,0 @@
-User-agent: *
-Disallow:
-Allow: /
-Sitemap: https://tanaybiradar.com/sitemap.xml
-
-User-agent: GPTBot
-Disallow: /
