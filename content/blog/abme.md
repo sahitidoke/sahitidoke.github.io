@@ -13,6 +13,7 @@ description = ""
 <li> math (in particular, abstract algebra) </li>
 <li> understanding large language models  </li>
 <li> spontaneity </li>
+<li> bojack horseman </li>
 <li> <i> realistic </i> horror films </li>
 <li> anime, vocaloid & jpop </li>
 <li> visiting new, local spots</li>
