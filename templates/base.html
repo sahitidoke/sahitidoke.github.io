@@ -20,23 +20,18 @@
 <body>
   <header>
     <a href="/" class="title">
-      <h1 id="header-name">sahiti doke</h1>
+      <span id="header-name">sahiti doke</span>
     </a>
-    <div class="header-links">
-      <a href="/blog" style="margin-left: 20px;">portfolio</a>
-     <div class="header-links">
-      {% set writing = get_section(path="writing/_index.md") %}
-
-    <a href="{{ writing.permalink }}" style="margin-left: 20px;">blog</a>
-
-      
+    {% set writing = get_section(path="writing/_index.md") %}
+    <nav class="header-links">
+      <a href="/blog">portfolio</a>
+      <a href="{{ writing.permalink }}">blog</a>
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
         <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
       </button>
-    </div>
-    
+    </nav>
   </header>
 
   <main>

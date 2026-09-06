@@ -37,14 +37,13 @@ body {
   font-size: 110%;
 }
 header {
-  padding-bottom: 1.5rem;
-  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 1.5rem;
   font-weight: 400;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--border-color);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 header a {
   color: var(--text-color);
@@ -55,7 +54,7 @@ header a:hover {
 #header-name {
   font-family: var(--heading-font);
   font-weight: 500;
-  font-size: 160%;
+  font-size: 115%;
   letter-spacing: 0.01em;
 }
 #header-name:hover {
@@ -69,16 +68,11 @@ header a:hover {
   gap: 20px;
 }
 .header-links > a {
-  position: relative;
-  padding-bottom: 2px;
-  background-image: linear-gradient(var(--accent-color), var(--accent-color));
-  background-size: 0% 1px;
-  background-position: left bottom;
-  background-repeat: no-repeat;
-  transition: background-size 0.2s ease, color 0.2s ease;
+  color: var(--blockquote-color);
+  transition: color 0.2s ease;
 }
 .header-links > a:hover {
-  background-size: 100% 1px;
+  color: var(--accent-color);
 }
 .theme-toggle {
   background: none;
@@ -197,14 +191,13 @@ blockquote {
   font-style: italic;
 }
 footer {
-  margin-top: 3rem;
+  margin-top: 4rem;
   padding: 1.5rem 0;
   text-align: center;
-  border-top: 1px solid var(--border-color);
   font-size: 90%;
 }
 footer a {
-  color: var(--text-color);
+  color: var(--blockquote-color);
 }
 footer a:hover {
   color: var(--accent-color);
@@ -258,4 +251,78 @@ ul.blog-posts li a {
 .scrapbook img:hover {
   opacity: 0.85;
   transform: scale(1.02);
+}
+/* hero */
+.hero {
+  margin-bottom: 2.5rem;
+}
+.hero-name {
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  margin: 0 0 0.9rem;
+}
+.social-row {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin: 0 0 1.5rem;
+}
+.social-icon {
+  color: var(--blockquote-color);
+  line-height: 0;
+  transition: color 0.2s ease;
+  background-image: none;
+}
+.social-icon:hover {
+  color: var(--accent-color);
+  background-image: none;
+}
+.social-icon svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+.bio {
+  max-width: 60ch;
+}
+.bio p {
+  margin: 0 0 0.9rem;
+}
+.hero-figure {
+  margin: 2rem 0;
+}
+.hero-figure img {
+  max-width: 60%;
+  height: auto;
+}
+/* eyebrow sections */
+.page-links {
+  color: var(--blockquote-color);
+  margin-bottom: 2rem;
+}
+.eyebrow-section {
+  margin: 2.25rem 0;
+}
+.eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--blockquote-color);
+  margin: 0 0 0.75rem;
+}
+.eyebrow-list {
+  list-style: none;
+  margin: 0;
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.eyebrow-list li {
+  font-size: 95%;
+  line-height: 1.55;
 }
