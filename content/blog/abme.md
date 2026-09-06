@@ -43,13 +43,13 @@ description = ""
 
 
 <h3> things i currently am thinking about </h3>
-<li> a statistics project about asymmetric contamination of graphical models. </li>
-<li> implementing linear logic in lean </li>
+
+<li> bringing ai safety to ucsb </li>
 <li> tinkering with SAEs on SSMs for my """lab""""  </li>
 <li> working through <a href ="https://missing.csail.mit.edu/"> missing semester in cs </a></li>
 <li> working through <a href ="https://mlc.ai/modern-gpu-programming-for-mlsys/index.html"> gpu programming in mlsys </a></li>
 <li> started a book club! currently reading braiding sweetgrass </li>
-<li> bringing ai safety to ucsb </li>
+
 
 <h3>things i want to work on</h3>
 <li> running a cafe </li>
