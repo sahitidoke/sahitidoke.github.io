@@ -1,16 +1,4 @@
 @import url('/flexoki.css');
-@font-face {
-  font-family: 'Encode Sans';
-  src: url('/fonts/EncodeSans.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Encode Sans';
-  src: url('/fonts/EncodeSans.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
 :root {
   --background-color: var(--flexoki-paper);
   --text-color: var(--flexoki-black);
@@ -20,7 +8,7 @@
   --code-background: var(--flexoki-100);
   --code-text-color: var(--flexoki-900);
   --border-color: var(--flexoki-200);
-  --heading-font: 'Cormorant Garamond', 'Encode Sans', serif;
+  --heading-font: 'Cormorant Garamond', 'Jost', serif;
 }
 html.dark {
   --background-color: var(--flexoki-black);
@@ -36,7 +24,7 @@ body, body * {
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 body {
-  font-family: 'Encode Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   margin: auto;
   padding: 20px;
   max-width: 740px;
