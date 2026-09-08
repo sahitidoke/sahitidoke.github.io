@@ -326,3 +326,34 @@ ul.blog-posts li a {
   font-size: 95%;
   line-height: 1.55;
 }
+.secret-vibes {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.secret-symbol {
+    opacity: 0.35;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.secret-text {
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0;
+    transition: max-width 0.5s ease, opacity 0.3s ease;
+}
+
+.secret-vibes:hover .secret-symbol {
+    opacity: 1;
+    transform: rotate(180deg);
+}
+
+.secret-vibes:hover .secret-text {
+    max-width: 100px;
+    opacity: 1;
+}
+
