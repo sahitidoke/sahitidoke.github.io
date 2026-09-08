@@ -20,17 +20,12 @@
 <body>
   <header>
     <a href="/" class="title">
-      <span id="header-name">sahiti doke</span>
+      <span id="header-name" class="secret-trigger">sahiti doke</span>
     </a>
     {% set writing = get_section(path="writing/_index.md") %}
     <nav class="header-links">
       <a href="/blog">portfolio</a>
       <a href = "{{writing.permalink}}"> blog </a>
-      <a href="/blog/vibes/" class="secret-vibes">
-    <span class="secret-symbol">✦</span>
-    <span class="secret-text">you found it</span>
-    </a>
-
       <a href="/blog/abme/">about me</a>
       
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
@@ -50,4 +45,16 @@
     <a href="https://github.com/sahitidoke">github</a> •
     <a href="https://www.linkedin.com/in/sahiti-doke-2b59b3262/">linkedin</a>
   </footer>
+  <script>
+  let clicks = 0;
+
+  document.querySelector(".secret-trigger").addEventListener("click", () => {
+    clicks++;
+
+    if (clicks === 3) {
+      window.location.href = "/blog/vibes/";
+    }
+  });
+</script>
+
 </body>
