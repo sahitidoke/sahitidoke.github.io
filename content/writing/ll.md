@@ -1,6 +1,8 @@
-+++ 
-title = "various models of linear logic" date = 2026-07-10 
 +++
+title = "Various Models of Linear Logic"
+date = 2026-07-10
++++
+
 
 Classical/Intuitionistic logic is governed by a set of structural and logical rules. The logical rules comprise modus ponens, $\wedge$, $\vee$, and $\bot$. The structural rules comprise contraction, weakening, and exchange. The rules for each are as follows, respectively:
 
