@@ -44,7 +44,7 @@ It is reasonable to think this is too restrictive a framework. Linear logic addr
 
 Another important property of linear logic is linear negation. The negation of a proposition $A$ is written $A^\perp$. Linear negation can be understood operationally in terms of inputs and outputs. One way of viewing it is as swapping their roles, where what was regarded as an input is now regarded as an output, and vice versa. This helps us interpret propositions as interfaces between processes instead of some static truth value.
 
-One of the advantages of linear logic is its relationship with parallelism. Linear transformations can be reversed as resources cannot simply disappear or be duplicated. Thus, we can consider transformations in both directions, which is nonstandard in ordinary typed lambda calculus. Consider the following example: suppose we have a term whose type can be viewed as a transformation from a ``question'' to an ``answer.'' This transformation needn't be linear, but linear logic allows you to reverse the roles of ``question'' and ``answer.''
+One of the advantages of linear logic is its relationship with parallelism. Linear transformations can be reversed as resources cannot simply disappear or be duplicated. Thus, we can consider transformations in both directions, which is nonstandard in ordinary typed lambda calculus. Consider the following example: suppose we have a term whose type can be viewed as a transformation from a "question" to an "answer." This transformation needn't be linear, but linear logic allows you to reverse the roles of "question" and "answer."
 
 The following discussion concerns the various models of linear logic.
 
@@ -56,15 +56,33 @@ A vector space can also be described using coordinates indexed by a set $X$. Cho
 
 ## The Exponential $!A$ and Finite Multisets
 
-Recall that linear logic normally does not allow us to duplicate a resource, but $!A$ allows us to wisely use weakening and contraction. It follows that the coordinate set associated with $!A$ should therefore consist of finite multisets of elements drawn from $A$. Thus, we can interpret $!A$ as finite multisets of $A$.
+Recall that linear logic normally does not allow us to duplicate a resource, but $!A$ allows us to wisely use weakening and contraction. It follows that the coordinate set associated with $!A$ should therefore consist of finite multisets of elements drawn from $A$. This is true because $!A \cong 1 \& A \& A^2 \& A^3 \& \cdots$ as $!A$ allows us to have zero, one, two, three, or arbitrarily many copies of $A$. Consequently, the set $\llbracket !A \rrbracket$ can be viewed as the set of finite multisets whose elements come from $\llbracket A \rrbracket$. A multiset makes sense here because the number of copies of an element matters ( for resource consumption purposes, $\{a,a\}$ is different from $\{a\}$). Thus, the coordinate set of the vector space corresponding to $!A$ should, morally, consist of finite multisets drawn from $A$. Each basis element can therefore be thought of as representing a particular finite collection of resources from $A$. The empty multiset corresponds to weakening, while multisets containing multiple copies correspond to contraction. Finally, if $A$ is interpreted as a vector space with dimension $\dim \llbracket A \rrbracket$, then the corresponding vector space over the finite field $\mathbb{F}_q$ has
+$$
+  q^{\dim \llbracket A \rrbracket}
+$$
+  elements
 
-This is exactly the kind of combinatorial structure that arises naturally in the finite-dimensional vector-space model.
+For weakening and contraction, note that 
+  $$
+  \frac{\Gamma \otimes 1 \vdash B}
+       {\Gamma \otimes !A \vdash B}
+  $$
+  is equivalent to
+  $$
+  \varepsilon : !A \to 1.
+  $$
+  and
+  $$
+  \frac{\Gamma \otimes (!A \otimes !A) \vdash B}
+       {\Gamma \otimes !A \vdash B}
+  $$
+  is equivalent to the diagonal map
+  $$
+  \delta_v \mapsto \delta_v \otimes \delta_v.
+  $$
+respectively. 
 
-The presentation observes that the relevant set can be identified with [missing expression], providing an interpretation of the exponential in terms of linear algebra.
-
-This is an important conceptual point. The exponential is not an arbitrary addition to the logic: in a model, it must correspond to an actual mathematical construction capable of representing the controlled reuse of resources. We see the other parallels in this table:
-
-![Comparison of linear logic and linear algebra](static/images/ll.pnd)
+![Comparison of linear logic and linear algebra](static/images/ll.png)
 
 # Model 2: Geometry of Interaction
 
