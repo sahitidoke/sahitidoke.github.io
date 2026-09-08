@@ -33,7 +33,7 @@ description = ""
 <li> Unhygienic people </li>
 
 
-<h3>things i am neutral about </h3>
+<h3>Things I am neutral about </h3>
 <li> Philosophy. I appreciate it from afar and it is cool that there are people who take this seriously but I have trouble pondering over armchair philosophy with no external payoff.  </li>
 <li> Religion. I think religion has immense value and I hope to learn more about it. For now, I am neutral, with an affinity for religion.</li>
 <li> Meeting new people </li>
