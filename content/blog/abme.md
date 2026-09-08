@@ -11,14 +11,13 @@ description = ""
   
 <h3>things i like </h3>
 <li> math (in particular, abstract algebra) </li>
-<li> understanding large language models  </li>
+<li> understanding non-LLM architectures (mamba-2, gdn, hrm, etc)  </li>
 <li> spontaneity </li>
 <li> bojack horseman </li>
 <li> <i> realistic </i> horror films </li>
 <li> anime, vocaloid & jpop </li>
 <li> visiting new, local spots</li>
-<li> the game, <a href = "https://setwithfriends.com/"> set </a></li>
-<li> playing rhythm games </li>
+<li> games: <a href = "https://setwithfriends.com/"> set </a>, project sekai, deltarune, avalon, bananagrams
 <li> coffee </li>
 <li> keeping up with sports (save football and baseball) </li>
 
@@ -30,11 +29,8 @@ description = ""
 <li> cats </li>
 <li> myself one day ago </li>
 <li> sleeping in </li>
-<li> lack of structure </li>
-<li> short form content </li>
+<li> unstructured tasks </li>
 <li> unhygienic people </li>
-
-
 
 
 <h3>things i am neutral about </h3>
@@ -42,20 +38,10 @@ description = ""
 <li> religion. i think religion has immense value and i hope to learn more about it. for now, i am neutral, with an affinity for religion.</li>
 <li> meeting new people </li>
 
-
-<h3> things i currently am thinking about </h3>
-
-<li> bringing ai safety to ucsb </li>
-<li> tinkering with SAEs on SSMs for my """lab""""  </li>
-<li> working through <a href ="https://missing.csail.mit.edu/"> missing semester in cs </a></li>
-<li> working through <a href ="https://mlc.ai/modern-gpu-programming-for-mlsys/index.html"> gpu programming in mlsys </a></li>
-<li> started a book club! currently reading braiding sweetgrass </li>
-
-
 <h3>things i want to work on</h3>
-<li> running a cafe </li>
-<li> learn more about embedded systems </li>
-<li> potentially partake in one stand up comedy show </li>
+<li> running a mathematics-themed cafe </li>
+<li> learn more about ML systems </li>
+<li> partake in one stand up comedy show </li>
 
 
 
