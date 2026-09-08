@@ -27,10 +27,10 @@ The propositions for linear logic are as follows:
 | *Every propositional variable is a proposition.* | | |
 | $A^{\perp}$ | negation | Negation of $A$ |
 | *For propositions $A$ and $B$:* | | |
-| $A \& B$ | with | Additive conjunction of $A$ and $B$ |
+| $A \\& B$ | with | Additive conjunction of $A$ and $B$ |
 | $A \oplus B$ | plus | Additive disjunction of $A$ and $B$ |
 | $A \otimes B$ | times | Multiplicative conjunction of $A$ and $B$ |
-| $A \parr B$ | par | Multiplicative disjunction of $A$ and $B$ (also $A \mid B$) |
+| $A \mathbin{\unicode{x22C8}} B$ | par | Multiplicative disjunction of $A$ and $B$ (also $A \mid B$) |
 | *Constants:* | | |
 | $\top$ | top | Additive truth |
 | $0$ | zero | Additive falsity |
@@ -56,7 +56,7 @@ A vector space can also be described using coordinates indexed by a set $X$. Cho
 
 ## The Exponential $!A$ and Finite Multisets
 
-Recall that linear logic normally does not allow us to duplicate a resource, but $!A$ allows us to wisely use weakening and contraction. It follows that the coordinate set associated with $!A$ should therefore consist of finite multisets of elements drawn from $A$. This is true because $!A \cong 1 \& A \& A^2 \& A^3 \& \cdots$ as $!A$ allows us to have zero, one, two, three, or arbitrarily many copies of $A$. Consequently, the set $\llbracket !A \rrbracket$ can be viewed as the set of finite multisets whose elements come from $\llbracket A \rrbracket$. A multiset makes sense here because the number of copies of an element matters ( for resource consumption purposes, $\{a,a\}$ is different from $\{a\}$). Thus, the coordinate set of the vector space corresponding to $!A$ should, morally, consist of finite multisets drawn from $A$. Each basis element can therefore be thought of as representing a particular finite collection of resources from $A$. The empty multiset corresponds to weakening, while multisets containing multiple copies correspond to contraction. Finally, if $A$ is interpreted as a vector space with dimension $\dim \llbracket A \rrbracket$, then the corresponding vector space over the finite field $\mathbb{F}_q$ has
+Recall that linear logic normally does not allow us to duplicate a resource, but $!A$ allows us to wisely use weakening and contraction. It follows that the coordinate set associated with $!A$ should therefore consist of finite multisets of elements drawn from $A$. This is true because $!A \cong 1 \\& A \\& A^2 \\& A^3 \\& \cdots$ as $!A$ allows us to have zero, one, two, three, or arbitrarily many copies of $A$. Consequently, the set $\llbracket !A \rrbracket$ can be viewed as the set of finite multisets whose elements come from $\llbracket A \rrbracket$. A multiset makes sense here because the number of copies of an element matters ( for resource consumption purposes, $\{a,a\}$ is different from $\{a\}$). Thus, the coordinate set of the vector space corresponding to $!A$ should, morally, consist of finite multisets drawn from $A$. Each basis element can therefore be thought of as representing a particular finite collection of resources from $A$. The empty multiset corresponds to weakening, while multisets containing multiple copies correspond to contraction. Finally, if $A$ is interpreted as a vector space with dimension $\dim \llbracket A \rrbracket$, then the corresponding vector space over the finite field $\mathbb{F}_q$ has
 $$
   q^{\dim \llbracket A \rrbracket}
 $$
@@ -94,4 +94,4 @@ $$
 (A^+ \otimes B^-) \longrightarrow (A^- \otimes B^+).
 $$
 
-The subcategories are useful in formalizing linear maps on spaces of operators on Hilbert spaces that take density matrices to density matrices. The subcategories are famous in quantum physics as ``categories of superoperators'' or ``categories of quantum operations.'' Thus, it has relations to quantum physics.
+The subcategories are useful in formalizing linear maps on spaces of operators on Hilbert spaces that take density matrices to density matrices. The subcategories are famous in quantum physics as categories of superoperators or categories of quantum operations. Thus, it has relations to quantum physics.
