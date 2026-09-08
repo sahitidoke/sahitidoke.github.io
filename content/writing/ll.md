@@ -57,10 +57,10 @@ A vector space can also be described using coordinates indexed by a set $X$. Cho
 ## The Exponential $!A$ and Finite Multisets
 
 Recall that linear logic normally does not allow us to duplicate a resource, but $!A$ allows us to wisely use weakening and contraction. It follows that the coordinate set associated with $!A$ should therefore consist of finite multisets of elements drawn from $A$. This is true because $!A \cong 1 \\& A \\& A^2 \\& A^3 \\& \cdots$ as $!A$ allows us to have zero, one, two, three, or arbitrarily many copies of $A$. Consequently, the set $⟦ !A \rrbracket$ can be viewed as the set of finite multisets whose elements come from $⟦ A \rrbracket$. A multiset makes sense here because the number of copies of an element matters ( for resource consumption purposes, $\{a,a\}$ is different from $\{a\}$). Thus, the coordinate set of the vector space corresponding to $!A$ should, morally, consist of finite multisets drawn from $A$. Each basis element can therefore be thought of as representing a particular finite collection of resources from $A$. The empty multiset corresponds to weakening, while multisets containing multiple copies correspond to contraction. Finally, if $A$ is interpreted as a vector space with dimension $\dim ⟦ A \rrbracket$, then the corresponding vector space over the finite field $\mathbb{F}_q$ has
-$$
+$
   q^{\dim ⟦ A \rrbracket}
-$$
-  elements
+$
+  elements.
 
 For weakening and contraction, note that 
   $$
@@ -81,7 +81,7 @@ For weakening and contraction, note that
   \delta_v \mapsto \delta_v \otimes \delta_v.
   $$
 respectively. 
-Other connections from linear algebra to linear logic is shown in the image
+Other connections from linear algebra to linear logic are shown in the image
 ![Comparison of linear logic and linear algebra](static/images/ll.jpg)
 
 # Model 2: Geometry of Interaction
