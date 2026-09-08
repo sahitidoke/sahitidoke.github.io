@@ -9,39 +9,39 @@ description = ""
     <a href="/rss.xml" target="_blank"> RSS </a>
   </p>
   
-<h3>things i like </h3>
-<li> math (in particular, abstract algebra) </li>
-<li> understanding non-LLM architectures (mamba-2, gdn, hrm, etc)  </li>
-<li> spontaneity </li>
-<li> bojack horseman </li>
-<li> <i> realistic </i> horror films </li>
-<li> anime, vocaloid & jpop </li>
-<li> visiting new, local spots</li>
-<li> games: <a href = "https://setwithfriends.com/"> set </a>, project sekai, deltarune, avalon, bananagrams
-<li> coffee </li>
-<li> keeping up with sports (save football and baseball) </li>
+<h3>Things I like </h3>
+<li> Math (in particular, abstract algebra) </li>
+<li> Understanding non-LLM architectures (Mamba-2, GDN, HRM, etc)  </li>
+<li> Spontaneity </li>
+<li> Bojack Horseman </li>
+<li> <i> Realistic </i> horror films </li>
+<li> Anime, vocaloid & J-pop </li>
+<li> Visiting new, local spots</li>
+<li> Games: <a href = "https://setwithfriends.com/"> Set </a>, Project Sekai, Deltarune, Avalon, Bananagrams
+<li> Coffee </li>
+<li> Keeping up with sports (save football and baseball) </li>
 
 
-<h3>things i dislike </h3>
-<li> loud noises </li>
-<li> incorrect usage of who/whom </li>
-<li> epistemic pedantism </li>
-<li> cats </li>
-<li> myself one day ago </li>
-<li> sleeping in </li>
-<li> unstructured tasks </li>
-<li> unhygienic people </li>
+<h3>Things I dislike </h3>
+<li> Loud noises </li>
+<li> Incorrect usage of who/whom </li>
+<li> Epistemic pedantism </li>
+<li> Cats </li>
+<li> Myself one day ago </li>
+<li> Sleeping in </li>
+<li> Unstructured tasks </li>
+<li> Unhygienic people </li>
 
 
 <h3>things i am neutral about </h3>
-<li> philosophy. i appreciate it from afar and it is cool that there are people who take this seriously but i have trouble pondering over armchair philosophy with no external payoff.  </li>
-<li> religion. i think religion has immense value and i hope to learn more about it. for now, i am neutral, with an affinity for religion.</li>
-<li> meeting new people </li>
+<li> Philosophy. I appreciate it from afar and it is cool that there are people who take this seriously but I have trouble pondering over armchair philosophy with no external payoff.  </li>
+<li> Religion. I think religion has immense value and I hope to learn more about it. For now, I am neutral, with an affinity for religion.</li>
+<li> Meeting new people </li>
 
-<h3>things i want to work on</h3>
-<li> running a mathematics-themed cafe </li>
-<li> learn more about ML systems </li>
-<li> partake in one stand up comedy show </li>
+<h3>Things I want to work on</h3>
+<li> Running a mathematics-themed cafe </li>
+<li> Learn more about ML systems </li>
+<li> Partake in one stand up comedy show </li>
 
 
 
