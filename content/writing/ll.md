@@ -30,7 +30,7 @@ The propositions for linear logic are as follows:
 | $A \\& B$ | with | Additive conjunction of $A$ and $B$ |
 | $A \oplus B$ | plus | Additive disjunction of $A$ and $B$ |
 | $A \otimes B$ | times | Multiplicative conjunction of $A$ and $B$ |
-| $A \mathbin{\unicode{x22C8}} B$ | par | Multiplicative disjunction of $A$ and $B$ (also $A \mid B$) |
+| $A ⅋ B$ | par | Multiplicative disjunction of $A$ and $B$ (also $A \mid B$) |
 | *Constants:* | | |
 | $\top$ | top | Additive truth |
 | $0$ | zero | Additive falsity |
