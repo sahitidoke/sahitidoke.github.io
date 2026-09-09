@@ -81,8 +81,9 @@ For weakening and contraction, note that
   \delta_v \mapsto \delta_v \otimes \delta_v.
   $$
 respectively. 
-Other connections from linear algebra to linear logic are shown in the image
-![Comparison of linear logic and linear algebra](static/images/ll.jpg)
+Other connections from linear algebra to linear logic are shown in the image below, comparing linear logic and linear algebra.
+
+![Comparing linear logic and linear algebra](/images/ll/semantics-table.png)
 
 # Model 2: Geometry of Interaction
 
