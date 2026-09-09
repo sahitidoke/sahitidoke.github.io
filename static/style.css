@@ -234,6 +234,10 @@ ul.blog-posts li a {
   padding-bottom: 0.5em;
   padding-left: 1em;
 }
+main img {
+  max-width: 100%;
+  height: auto;
+}
 .scrapbook {
   display: flex;
   flex-wrap: wrap;
