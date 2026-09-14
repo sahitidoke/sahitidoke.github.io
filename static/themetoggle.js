@@ -5,7 +5,7 @@ function toggleTheme() {
 
 function initTheme() {
   const savedMode = localStorage.getItem('darkMode');
-  if (savedMode === 'true' || (savedMode === null && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  if (savedMode === 'true') {
     document.documentElement.classList.add('dark');
   }
 }
