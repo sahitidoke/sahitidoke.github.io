@@ -330,6 +330,13 @@ main img {
   font-size: 95%;
   line-height: 1.55;
 }
+.quiet-note {
+  margin-top: 2.5rem;
+  font-size: 80%;
+  font-style: italic;
+  color: var(--blockquote-color);
+  opacity: 0.6;
+}
 .secret-vibes {
     display: inline-flex;
     align-items: center;

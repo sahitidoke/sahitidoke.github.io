@@ -5,7 +5,6 @@ description = ""
 +++
 
    <p>
-    <a href = "/blog/vibes"> vibes </a> • 
     <a href="/rss.xml" target="_blank"> RSS </a>
   </p>
   
@@ -42,6 +41,8 @@ description = ""
 <li> Running a mathematics-themed cafe </li>
 <li> Learn more about ML systems </li>
 <li> Partake in one stand up comedy show </li>
+
+<p class="quiet-note">sometimes i collect <a href="/blog/vibes">vibes</a>.</p>
 
 
 
