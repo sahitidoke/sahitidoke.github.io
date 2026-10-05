@@ -2,6 +2,23 @@
 {% block content %}
 {% set writing = get_section(path="writing/_index.md") %}
 <section class="hero">
+  <div class="hero-art" aria-hidden="true">
+    {{ load_data(path="static/images/punpun.svg", format="plain") | safe }}
+    {{ load_data(path="static/images/ouran.svg", format="plain") | safe }}
+  </div>
+  <script>
+    (function () {
+      var art = document.currentScript.previousElementSibling;
+      var kinds = ["punpun", "ouran"];
+      var i = Math.floor(Math.random() * 2);
+      art.classList.add("show-" + kinds[i]);
+      art.addEventListener("click", function () {
+        art.classList.remove("show-" + kinds[i]);
+        i = 1 - i;
+        art.classList.add("show-" + kinds[i]);
+      });
+    })();
+  </script>
   <h1 class="hero-name">Sahiti Doke</h1>
   <div class="social-row">
     <a href="mailto:sahiti.doke@gmail.com" aria-label="Email" class="social-icon">

@@ -259,6 +259,49 @@ main img {
 /* hero */
 .hero {
   margin-bottom: 2.5rem;
+  position: relative;
+}
+.hero-art {
+  position: absolute;
+  top: -3rem;
+  left: calc(100% - 4rem);
+  width: 300px;
+  color: var(--text-color);
+  opacity: 0.9;
+  cursor: pointer;
+}
+.hero-art .art {
+  display: none;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.hero-art.show-punpun .art-punpun,
+.hero-art.show-ouran .art-ouran {
+  display: block;
+}
+.hero-art .sway {
+  transform-origin: 60% 0;
+  animation: sway 6s ease-in-out infinite alternate;
+}
+@keyframes sway {
+  from { transform: rotate(-1.2deg); }
+  to { transform: rotate(1.2deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-art .sway { animation: none; }
+}
+@media (max-width: 1180px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-art {
+    order: 10;
+    position: static;
+    width: 200px;
+    margin: 0 auto 1rem;
+  }
 }
 .hero-name {
   font-size: 3rem;
