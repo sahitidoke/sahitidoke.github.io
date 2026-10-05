@@ -1,31 +1,51 @@
 <svg class="art art-punpun" viewBox="0 0 300 560" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
   <g class="sway">
     <!-- thread -->
-    <path d="M183 0 C181 40 186 70 182 110 C178 150 192 190 214 238" stroke-width="1.3"/>
-    <path d="M214 240 C217 250 213 258 218 268" stroke-width="1"/>
-    <path d="M184 30 C183 60 185 80 183 96" stroke-width=".6" opacity=".5"/>
-    <!-- head + body -->
-    <g stroke-width="1.7">
-      <path d="M150 250 C180 248 205 268 206 300 C208 330 214 360 218 395 C222 425 200 441 165 440 C130 440 110 428 112 400 C114 370 122 340 124 318 L96 306 L126 292 C126 268 132 252 150 250 Z"/>
-    </g>
-    <g stroke-width=".8" opacity=".55" transform="translate(1.6 -1.2)">
-      <path d="M150 250 C180 248 205 268 206 300 C208 330 214 360 218 395 C222 425 200 441 165 440 C130 440 110 428 112 400 C114 370 122 340 124 318 L96 306 L126 292 C126 268 132 252 150 250"/>
-    </g>
-    <!-- eyes -->
-    <circle cx="138" cy="283" r="2.6" fill="currentColor" stroke="none"/>
-    <circle cx="160" cy="282" r="2.6" fill="currentColor" stroke="none"/>
-    <!-- raised arm holding the thread -->
-    <path d="M208 322 C224 304 226 276 218 250" stroke-width="1.6"/>
-    <path d="M219 254 C213 252 208 248 207 242 M220 248 C215 244 211 240 211 234" stroke-width="1.2"/>
-    <!-- dangling arm -->
-    <path d="M122 352 C116 365 111 376 106 390" stroke-width="1.5"/>
-    <!-- legs -->
-    <path d="M152 440 C151 460 148 480 146 502 L136 506" stroke-width="1.5"/>
-    <path d="M180 439 C182 458 184 478 186 500 L197 503" stroke-width="1.5"/>
-    <!-- shading -->
-    <g stroke-width=".9" opacity=".7">
-      <path d="M204 352 L212 344 M206 366 L214 357 M207 380 L215 371 M207 394 L216 384 M203 408 L214 396 M196 420 L210 405"/>
-      <path d="M180 432 L196 418 M168 437 L186 422" opacity=".6"/>
+    <path d="M179 0 C177 40 181 80 178 112 C176 124 179 132 178 140" stroke-width="1.2"/>
+    <path d="M180 24 C179 52 181 72 180 88" stroke-width=".6" opacity=".5"/>
+    <g transform="translate(-23.5 88.25) scale(1.15)">
+      <!-- head + body -->
+      <g stroke-width="1.5">
+        <path d="M130 70 C134 54 148 43 168 42 C192 42 206 60 210 90 C214 125 216 165 218 204"/>
+        <path d="M128 90 C124 125 119 165 116 206"/>
+        <path d="M130 70 L88 78 L128 90"/>
+      </g>
+      <g stroke-width=".7" opacity=".5" transform="translate(1.2 -.8)">
+        <path d="M130 70 C134 54 148 43 168 42 C192 42 206 60 210 90 C214 125 216 165 218 204"/>
+        <path d="M128 90 C124 125 119 165 116 206"/>
+      </g>
+      <!-- eye -->
+      <ellipse cx="168" cy="73" rx="3" ry="4" fill="currentColor" stroke="none"/>
+      <!-- shading down the right side -->
+      <g stroke-width=".7" opacity=".55" transform="translate(-5 2)">
+        <path d="M200 66 L208 60 M202 80 L210 73 M203 94 L211 87 M204 108 L212 101 M205 122 L213 115 M206 136 L214 129 M206 150 L215 143 M207 164 L215 157 M207 178 L216 171 M208 192 L217 185"/>
+      </g>
+      <!-- belt -->
+      <g stroke-width="1.3">
+        <path d="M116 204 C150 210 186 208 218 201"/>
+        <path d="M115 212 C150 218 186 216 218 209"/>
+      </g>
+      <!-- skirt -->
+      <path d="M115 212 C113 232 110 250 108 264 C116 274 128 268 136 266 C146 274 158 276 168 270 C178 276 188 274 196 268" stroke-width="1.5"/>
+      <!-- drooping wing -->
+      <path d="M198 211 C201 240 194 280 204 304 C220 302 232 278 228 250 C226 232 222 218 216 210" stroke-width="1.5"/>
+      <g stroke-width=".7" opacity=".6">
+        <path d="M206 222 L210 290 M212 220 L216 294 M218 222 L222 288 M224 236 L226 276"/>
+      </g>
+      <!-- legs -->
+      <g stroke-width="1.3">
+        <path d="M148 272 C149 310 149 350 150 384"/>
+        <path d="M152 273 C153 310 153 350 153 384"/>
+        <path d="M180 272 C182 310 184 350 185 384"/>
+        <path d="M184 271 C186 310 188 350 189 384"/>
+      </g>
+      <!-- feet -->
+      <g stroke-width="1.3">
+        <path d="M151 384 L134 392 M151 384 L144 396 M152 384 L162 392"/>
+        <path d="M187 384 L172 394 M187 384 L184 397 M188 384 L200 392"/>
+      </g>
+      <!-- ground -->
+      <path d="M118 400 C150 396 196 398 236 394" stroke-width=".7" opacity=".45"/>
     </g>
   </g>
 </svg>
