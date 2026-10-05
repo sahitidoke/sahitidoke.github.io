@@ -268,17 +268,12 @@ main img {
   width: 300px;
   color: var(--text-color);
   opacity: 0.9;
-  cursor: pointer;
 }
 .hero-art .art {
-  display: none;
+  display: block;
   width: 100%;
   height: auto;
   overflow: visible;
-}
-.hero-art.show-punpun .art-punpun,
-.hero-art.show-ouran .art-ouran {
-  display: block;
 }
 .hero-art .sway {
   transform-origin: 60% 0;
