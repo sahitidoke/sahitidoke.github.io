@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<head></head>
+<html lang="en">
+<head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
   <title> Sahiti Doke </title>
@@ -8,9 +9,6 @@
   <script async src="/footnote.js"></script>
 
   <link rel="shortcut icon" href="/favicon.png"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Jost:ital,wght@0,400;0,500;0,600;1,400&display=swap">
   <link rel="stylesheet" href="/style.css"/>
 
   {% block extra_head %} {% endblock extra_head %}
@@ -18,20 +16,20 @@
 
 <body>
   <header>
-    <a href="/" class="title">
-      <span id="header-name" class="secret-trigger">sahiti doke</span>
+    <a href="/" class="title" aria-label="sahiti doke">
+      <span id="header-name" class="secret-trigger"><span class="typed">sahiti doke</span><span class="caret" aria-hidden="true"></span></span>
     </a>
     {% set writing = get_section(path="writing/_index.md") %}
     <nav class="header-links">
+      <a href="/">home</a>
       <a href="/blog">portfolio</a>
-      <a href = "{{writing.permalink}}"> blog </a>
-      <a href="/blog/abme/">about me</a>
-      
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-      </button>
+      <a href="{{ writing.permalink }}">blog</a>
+      <a href="/blog/abme/">about</a>
+      <a href="https://github.com/sahitidoke" target="_blank" rel="noopener noreferrer">[github]</a>
+      <a href="https://www.linkedin.com/in/sahiti-doke-2b59b3262/" target="_blank" rel="noopener noreferrer">[linkedin]</a>
+      <a href="https://x.com/i_love_saes" target="_blank" rel="noopener noreferrer">[x]</a>
+      <a href="https://cal.com/sahiti-doke-ybeuan" target="_blank" rel="noopener noreferrer">[chat]</a>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">[dark]</button>
     </nav>
   </header>
 
@@ -40,10 +38,7 @@
   </main>
 
   <footer>
-    <a href="mailto:sahiti.doke@gmail.com">email</a> •
-    <a href="https://github.com/sahitidoke">github</a> •
-    <a href="https://www.linkedin.com/in/sahiti-doke-2b59b3262/">linkedin</a> •
-    <a href="https://x.com/i_love_saes">x</a>
+    <a href="mailto:sahiti.doke@gmail.com">sahiti.doke@gmail.com</a>
   </footer>
   <script>
   let clicks = 0;
@@ -55,6 +50,22 @@
       window.location.href = "/blog/vibes/";
     }
   });
+
+  // type the header name once per visit; afterwards just show it with the caret
+  (function () {
+    const el = document.querySelector("#header-name .typed");
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce || sessionStorage.getItem("typed")) return;
+    sessionStorage.setItem("typed", "1");
+    const text = el.textContent;
+    el.textContent = "";
+    let i = 0;
+    (function step() {
+      el.textContent = text.slice(0, ++i);
+      if (i < text.length) setTimeout(step, 70 + Math.random() * 60);
+    })();
+  })();
 </script>
 
 </body>
+</html>
