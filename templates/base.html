@@ -9,16 +9,35 @@
   <script async src="/footnote.js"></script>
 
   <link rel="shortcut icon" href="/favicon.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&display=swap">
   <link rel="stylesheet" href="/style.css"/>
+  <script defer src="/dots.js"></script>
 
   {% block extra_head %} {% endblock extra_head %}
 </head>
 
 <body>
+  <canvas id="dots" aria-hidden="true"></canvas>
   <header>
     <a href="/" class="title" aria-label="sahiti doke">
-      <span id="header-name" class="secret-trigger"><span class="typed">sahiti doke</span><span class="caret" aria-hidden="true"></span></span>
+      <span id="header-name" class="secret-trigger"><span class="typed" data-text="sahiti doke"></span><span class="caret" aria-hidden="true"></span></span>
     </a>
+    <script>
+    // type the name out on every page load, with human-ish keystroke timing
+    (function () {
+      const el = document.querySelector("#header-name .typed");
+      const text = el.dataset.text;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { el.textContent = text; return; }
+      let i = 0;
+      function step() {
+        el.textContent = text.slice(0, ++i);
+        if (i < text.length) setTimeout(step, text[i] === " " ? 180 : 90 + Math.random() * 90);
+      }
+      setTimeout(step, 400);
+    })();
+    </script>
     {% set writing = get_section(path="writing/_index.md") %}
     <nav class="header-links">
       <a href="/">home</a>
@@ -50,21 +69,6 @@
       window.location.href = "/blog/vibes/";
     }
   });
-
-  // type the header name once per visit; afterwards just show it with the caret
-  (function () {
-    const el = document.querySelector("#header-name .typed");
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce || sessionStorage.getItem("typed")) return;
-    sessionStorage.setItem("typed", "1");
-    const text = el.textContent;
-    el.textContent = "";
-    let i = 0;
-    (function step() {
-      el.textContent = text.slice(0, ++i);
-      if (i < text.length) setTimeout(step, 70 + Math.random() * 60);
-    })();
-  })();
 </script>
 
 </body>

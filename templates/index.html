@@ -1,12 +1,7 @@
 {% extends "base.html" %}
-{% block extra_head %}
-  <script defer src="/dots.js"></script>
-{% endblock extra_head %}
 {% block content %}
 {% set writing = get_section(path="writing/_index.md") %}
 <section class="home">
-  <canvas id="dots" aria-hidden="true"></canvas>
-
   <p>
    Greetings! I'm Sahiti, a pretty average second year math student at UC Santa Barbara's <a href="https://ccs.ucsb.edu/">College of Creative Studies</a>. Currently, I think about AI safety. I would describe myself as a big proponent of doing things.
   </p>

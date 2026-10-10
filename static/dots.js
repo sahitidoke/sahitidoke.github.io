@@ -3,7 +3,7 @@
   const canvas = document.getElementById('dots');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  const GAP = 18, R = 1, REACH = 90, PUSH = 14, BASE = 0.18, PEAK = 0.85;
+  const GAP = 22, R = 1, REACH = 110, PUSH = 16, BASE = 0.13, PEAK = 0.7;
   const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
                 !window.matchMedia('(hover: hover)').matches;
 
@@ -15,7 +15,7 @@
 
   function layout() {
     const dpr = window.devicePixelRatio || 1;
-    w = canvas.clientWidth; h = canvas.clientHeight;
+    w = window.innerWidth; h = window.innerHeight;
     canvas.width = w * dpr; canvas.height = h * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     dots = [];
@@ -74,10 +74,10 @@
     .observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 
   if (still) return;
-  canvas.addEventListener('pointermove', (e) => {
-    const r = canvas.getBoundingClientRect();
-    pointer = { x: e.clientX - r.left, y: e.clientY - r.top };
+  // canvas is a fixed full-viewport background, so client coords map directly
+  window.addEventListener('pointermove', (e) => {
+    pointer = { x: e.clientX, y: e.clientY };
     wake();
   });
-  canvas.addEventListener('pointerleave', () => { pointer = null; wake(); });
+  document.documentElement.addEventListener('pointerleave', () => { pointer = null; wake(); });
 })();
