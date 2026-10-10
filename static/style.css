@@ -247,16 +247,6 @@ main img {
 .home li {
   margin: 0.3rem 0;
 }
-details {
-  margin-top: 2.5rem;
-}
-details summary {
-  cursor: pointer;
-  color: var(--blockquote-color);
-}
-details p {
-  margin-top: 0.6rem;
-}
 /* eyebrow sections */
 .page-links {
   color: var(--blockquote-color);
