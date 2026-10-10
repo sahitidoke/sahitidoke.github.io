@@ -25,11 +25,16 @@
       <span id="header-name" class="secret-trigger"><span class="typed" data-text="sahiti doke"></span><span class="caret" aria-hidden="true"></span></span>
     </a>
     <script>
-    // type the name out on every page load, with human-ish keystroke timing
+    // type the name out on a fresh visit or reload, but not when moving between pages on the site
     (function () {
       const el = document.querySelector("#header-name .typed");
       const text = el.dataset.text;
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { el.textContent = text; return; }
+      const nav = performance.getEntriesByType("navigation")[0];
+      const type = nav ? nav.type : "navigate";
+      let internal = false;
+      try { internal = !!document.referrer && new URL(document.referrer).origin === location.origin; } catch (e) {}
+      const animate = type === "reload" || (type === "navigate" && !internal);
+      if (!animate || window.matchMedia("(prefers-reduced-motion: reduce)").matches) { el.textContent = text; return; }
       let i = 0;
       function step() {
         el.textContent = text.slice(0, ++i);
