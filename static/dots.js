@@ -4,7 +4,7 @@
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
   const RAMP = '.:-=+*#%';
-  const GAP_X = 14, GAP_Y = 20, SIZE = 12, REACH = 130, BASE = 0.14, PEAK = 0.75;
+  const GAP_X = 14, GAP_Y = 20, SIZE = 12, REACH = 130, BASE = 0.14, PEAK = 0.3;
   const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
                 !window.matchMedia('(hover: hover)').matches;
 
