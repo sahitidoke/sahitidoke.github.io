@@ -1,13 +1,14 @@
-// minimal dot field: dots part around the cursor and drift back
+// minimal ascii field: faint dots that thicken into glyphs around the cursor
 (function () {
   const canvas = document.getElementById('dots');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  const GAP = 22, R = 1, REACH = 110, PUSH = 16, BASE = 0.13, PEAK = 0.7;
+  const RAMP = '.:-=+*#%';
+  const GAP_X = 14, GAP_Y = 20, SIZE = 12, REACH = 130, BASE = 0.14, PEAK = 0.75;
   const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
                 !window.matchMedia('(hover: hover)').matches;
 
-  let dots = [], w = 0, h = 0, color = '#000', pointer = null, running = false;
+  let cells = [], w = 0, h = 0, color = '#000', pointer = null, running = false;
 
   function readColor() {
     color = getComputedStyle(document.documentElement).getPropertyValue('--text-color').trim() || '#000';
@@ -18,45 +19,40 @@
     w = window.innerWidth; h = window.innerHeight;
     canvas.width = w * dpr; canvas.height = h * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    dots = [];
-    const ox = (w % GAP) / 2 + GAP / 2, oy = (h % GAP) / 2 + GAP / 2;
-    for (let y = oy; y < h; y += GAP)
-      for (let x = ox; x < w; x += GAP)
-        dots.push({ x0: x, y0: y, x, y, a: BASE });
+    cells = [];
+    const ox = (w % GAP_X) / 2 + GAP_X / 2, oy = (h % GAP_Y) / 2 + GAP_Y / 2;
+    for (let y = oy; y < h; y += GAP_Y)
+      for (let x = ox; x < w; x += GAP_X)
+        cells.push({ x, y, v: 0 });
     draw();
   }
 
   function draw() {
     ctx.clearRect(0, 0, w, h);
     ctx.fillStyle = color;
-    for (const d of dots) {
-      ctx.globalAlpha = d.a;
-      ctx.beginPath();
-      ctx.arc(d.x, d.y, R, 0, Math.PI * 2);
-      ctx.fill();
+    ctx.font = SIZE + "px 'Geist Mono', ui-monospace, Menlo, monospace";
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    for (const c of cells) {
+      const k = Math.min(RAMP.length - 1, Math.floor(c.v * RAMP.length));
+      ctx.globalAlpha = BASE + (PEAK - BASE) * c.v;
+      ctx.fillText(RAMP[k], c.x, c.y);
     }
     ctx.globalAlpha = 1;
   }
 
   function tick() {
     let moving = false;
-    for (const d of dots) {
-      let tx = d.x0, ty = d.y0, ta = BASE;
+    for (const c of cells) {
+      let target = 0;
       if (pointer) {
-        const dx = d.x0 - pointer.x, dy = d.y0 - pointer.y;
-        const dist = Math.hypot(dx, dy);
-        if (dist < REACH) {
-          const f = 1 - dist / REACH, s = f * f;
-          const n = dist || 1;
-          tx += (dx / n) * PUSH * s;
-          ty += (dy / n) * PUSH * s;
-          ta = BASE + (PEAK - BASE) * f;
-        }
+        const dist = Math.hypot(c.x - pointer.x, c.y - pointer.y);
+        if (dist < REACH) target = Math.pow(1 - dist / REACH, 1.6);
       }
-      d.x += (tx - d.x) * 0.15;
-      d.y += (ty - d.y) * 0.15;
-      d.a += (ta - d.a) * 0.15;
-      if (Math.abs(tx - d.x) > 0.05 || Math.abs(ty - d.y) > 0.05 || Math.abs(ta - d.a) > 0.005) moving = true;
+      // rise quickly, fade slowly, so the cursor leaves a short trail
+      c.v += (target - c.v) * (target > c.v ? 0.35 : 0.06);
+      if (Math.abs(target - c.v) > 0.01) moving = true;
+      else c.v = target;
     }
     draw();
     if (moving || pointer) requestAnimationFrame(tick);
@@ -69,6 +65,7 @@
 
   readColor();
   layout();
+  if (document.fonts) document.fonts.ready.then(draw);
   window.addEventListener('resize', layout);
   new MutationObserver(() => { readColor(); draw(); })
     .observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });

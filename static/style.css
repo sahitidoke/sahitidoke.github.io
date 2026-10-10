@@ -7,7 +7,7 @@
   --code-background: #f5f5f5;
   --code-text-color: #111;
   --border-color: #e5e5e5;
-  --heading-font: 'Geist', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --heading-font: 'EB Garamond', Garamond, Georgia, serif;
   --mono-font: 'Geist Mono', ui-monospace, Menlo, monospace;
 }
 html.dark {
@@ -24,7 +24,7 @@ body, body * {
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 body {
-  font-family: 'Geist', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'EB Garamond', Garamond, Georgia, serif;
   margin: auto;
   padding: 20px;
   max-width: 640px;
@@ -32,9 +32,9 @@ body {
   background-color: var(--background-color);
   word-wrap: break-word;
   overflow-wrap: break-word;
-  line-height: 1.6;
+  line-height: 1.55;
   color: var(--text-color);
-  font-size: 105%;
+  font-size: 122%;
 }
 /* header */
 header {
@@ -71,7 +71,7 @@ header a {
   gap: 0.35rem 1rem;
   margin-top: 0.6rem;
   font-family: var(--mono-font);
-  font-size: 85%;
+  font-size: 14px;
 }
 .header-links a {
   color: var(--blockquote-color);
@@ -141,7 +141,7 @@ table {
 }
 code {
   font-family: var(--mono-font);
-  font-size: 0.9em;
+  font-size: 0.78em;
   padding: 2px 5px;
   background-color: var(--code-background);
 }
@@ -171,7 +171,7 @@ footer {
   margin-top: 4rem;
   padding: 1.5rem 0;
   font-family: var(--mono-font);
-  font-size: 80%;
+  font-size: 13px;
   color: var(--blockquote-color);
 }
 footer a {
