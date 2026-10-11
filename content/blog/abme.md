@@ -22,6 +22,7 @@ description = ""
 
 
 <h3>Things I dislike </h3>
+<li> Thinking </li>
 <li> Loud noises </li>
 <li> Incorrect usage of who/whom </li>
 <li> Epistemic pedantism </li>
@@ -29,7 +30,6 @@ description = ""
 <li> Myself one day ago </li>
 <li> Sleeping in </li>
 <li> Unstructured tasks </li>
-<li> Thinking </li>
 
 
 <h3>Things I am neutral about </h3>
