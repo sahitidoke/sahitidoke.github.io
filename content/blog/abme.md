@@ -29,7 +29,6 @@ description = ""
 <li> Myself one day ago </li>
 <li> Sleeping in </li>
 <li> Unstructured tasks </li>
-<li> Unhygienic people </li>
 <li> Thinking </li>
 
 
