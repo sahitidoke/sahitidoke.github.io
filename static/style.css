@@ -310,8 +310,8 @@ main img {
   padding: 0;
   background: none;
   font-family: var(--mono-font);
-  font-size: 9px;
-  line-height: 9px;
+  font-size: 10px;
+  line-height: 10px;
   letter-spacing: 0;
   color: var(--text-color);
   user-select: none;
