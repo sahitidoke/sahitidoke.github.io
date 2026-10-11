@@ -30,6 +30,7 @@ description = ""
 <li> Sleeping in </li>
 <li> Unstructured tasks </li>
 <li> Unhygienic people </li>
+<li> Thinking </li>
 
 
 <h3>Things I am neutral about </h3>
