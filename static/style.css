@@ -213,23 +213,43 @@ main img {
   max-width: 100%;
   height: auto;
 }
+html {
+  overflow-x: hidden;
+}
 .scrapbook {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
 }
 .scrapbook img {
+  --r: -2deg;
+  position: relative;
   height: 250px;
   width: auto;
+  max-width: none;
+  margin: -10px;
   object-fit: cover;
-  border-radius: 2px;
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: rotate(var(--r));
+  transition: transform 0.2s ease;
 }
+.scrapbook img:nth-child(2n)  { --r: 3deg;  height: 210px; z-index: 2; }
+.scrapbook img:nth-child(3n)  { --r: -5deg; height: 320px; z-index: 1; }
+.scrapbook img:nth-child(4n)  { --r: 6deg;  height: 180px; z-index: 3; }
+.scrapbook img:nth-child(5n)  { --r: -3deg; height: 340px; z-index: 4; }
+.scrapbook img:nth-child(7n)  { --r: 4deg;  height: 270px; z-index: 5; }
 .scrapbook img:hover {
-  opacity: 0.85;
-  transform: scale(1.02);
+  z-index: 10;
+  transform: rotate(0) scale(1.08);
+}
+@media (max-width: 480px) {
+  .scrapbook img { height: 140px; margin: -6px; }
+  .scrapbook img:nth-child(2n) { height: 120px; }
+  .scrapbook img:nth-child(3n) { height: 180px; }
+  .scrapbook img:nth-child(5n) { height: 160px; }
 }
 /* homepage */
 #dots {
