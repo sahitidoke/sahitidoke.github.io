@@ -74,6 +74,13 @@
       window.location.href = "/blog/vibes/";
     }
   });
+
+  let typed = "";
+  document.addEventListener("keydown", (e) => {
+    if (e.key.length !== 1) return;
+    typed = (typed + e.key.toLowerCase()).slice(-7);
+    if (typed === "celeste") window.location.href = atob("L3gvazdxMm0v");
+  });
 </script>
 
 </body>
