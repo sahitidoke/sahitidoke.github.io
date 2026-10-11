@@ -250,6 +250,9 @@ main img {
 .home li {
   margin: 0.3rem 0;
 }
+.home .eyebrow {
+  margin-top: 2rem;
+}
 /* eyebrow sections */
 .page-links {
   color: var(--blockquote-color);
