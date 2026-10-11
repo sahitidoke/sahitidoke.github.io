@@ -14,4 +14,7 @@ feed_filenames = ["rss.xml"]
 [extra]
 # Put all your custom variables here
 emoji-support = true
+# now playing widget on the homepage (spotify scrobbles to last.fm); leave empty to hide it
+lastfm_user = "buttertan"
+lastfm_key = "077e8d41406ab98d47f7570d84608099"
 

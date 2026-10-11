@@ -284,6 +284,67 @@ main img {
   color: var(--blockquote-color);
   opacity: 0.6;
 }
+/* now playing */
+.np {
+  margin: 2rem 0 1.5rem;
+}
+.np .eyebrow {
+  display: flex;
+  align-items: baseline;
+}
+.np-caret {
+  width: 0.45em;
+  height: 0.9em;
+  margin-left: 6px;
+  vertical-align: -0.1em;
+}
+.np-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  color: var(--text-color);
+  text-decoration: none;
+}
+.np-art {
+  margin: 0;
+  padding: 0;
+  background: none;
+  font-family: var(--mono-font);
+  font-size: 9px;
+  line-height: 9px;
+  letter-spacing: 0;
+  color: var(--text-color);
+  user-select: none;
+  flex: none;
+}
+.np-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+.np-title {
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+.np-card:hover .np-title {
+  color: var(--accent-hover);
+}
+.np-sub {
+  font-family: var(--mono-font);
+  font-size: 13px;
+  color: var(--blockquote-color);
+}
+.np-eq {
+  margin-top: 0.4rem;
+  font-family: var(--mono-font);
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  color: var(--blockquote-color);
+}
+@media (max-width: 480px) {
+  .np-card { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+}
 @media (prefers-reduced-motion: reduce) {
   .caret { animation: none; }
 }

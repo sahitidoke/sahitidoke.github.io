@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% block extra_head %}<script defer src="/nowplaying.js"></script>{% endblock extra_head %}
 {% block content %}
 {% set writing = get_section(path="writing/_index.md") %}
 <section class="home">
@@ -14,6 +15,20 @@
     <li>Research fellow @ SPAR; working on model diffing with Stepan Shabalin</li>
     <li>Building the AI Safety group @ UCSB</li>
   </ul>
+
+  {% if config.extra.lastfm_user and config.extra.lastfm_key %}
+  <section id="now-playing" class="np" hidden data-user="{{ config.extra.lastfm_user }}" data-key="{{ config.extra.lastfm_key }}">
+    <h2 class="eyebrow"><span class="np-status">listening now</span><span class="caret np-caret" aria-hidden="true"></span></h2>
+    <a class="np-card" target="_blank" rel="noopener noreferrer">
+      <pre class="np-art" aria-hidden="true"></pre>
+      <span class="np-meta">
+        <span class="np-title"></span>
+        <span class="np-sub"></span>
+        <span class="np-eq" aria-hidden="true"></span>
+      </span>
+    </a>
+  </section>
+  {% endif %}
 
   <p>If you want to chat about any of this, <a href="https://cal.com/sahiti-doke-ybeuan">grab a time</a>.</p>
 </section>
