@@ -21,4 +21,5 @@ date = 2026-07-08
    <img src="/images/i10.jpg" alt="alt text">
     <img src="/images/i10.png" alt="alt text">
 <img src="/images/healthy-food-pyramid.png" alt="alt text">
+<img src="/images/red-glitch-portrait.png" alt="alt text">
 </div>
