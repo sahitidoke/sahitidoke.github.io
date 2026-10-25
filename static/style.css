@@ -83,7 +83,8 @@ header a {
 @media (min-width: 1100px) {
   .header-links {
     position: absolute;
-    top: calc(20px + 2.5rem + 0.4rem);
+    /* line up with the first line of the page content: body padding + header padding, name line, header margin */
+    top: calc(24px + 2.5rem + 2.5rem + 2.5rem);
     left: calc(50% - 300px - 11rem);
     width: 8rem;
     flex-direction: column;
