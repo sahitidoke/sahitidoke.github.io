@@ -76,6 +76,28 @@ header a {
 .header-links a {
   color: var(--blockquote-color);
 }
+.nav-gap {
+  display: none;
+}
+/* on wide screens the links sit in a vertical column left of the content */
+@media (min-width: 1100px) {
+  .header-links {
+    position: absolute;
+    top: calc(20px + 2.5rem + 0.4rem);
+    left: calc(50% - 300px - 11rem);
+    width: 8rem;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    gap: 0.3rem;
+    margin-top: 0;
+    z-index: 20;
+  }
+  .nav-gap {
+    display: block;
+    height: 0.6rem;
+  }
+}
 .header-links a:hover {
   color: var(--text-color);
 }
