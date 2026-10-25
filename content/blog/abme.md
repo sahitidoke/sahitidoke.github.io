@@ -42,7 +42,6 @@ description = ""
 <li> Learn more about ML systems </li>
 <li> Partake in one stand up comedy show </li>
 
-<p class="quiet-note">sometimes i collect <a href="/blog/vibes">vibes</a>.</p>
 
 
 

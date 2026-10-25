@@ -1,6 +1,8 @@
 +++
 title = "vibes"
-date = 2026-07-08
+
+[extra]
+secret = true
 +++
    <p>
     <a href="/blog/abme">about me</a> • 
