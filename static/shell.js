@@ -23,9 +23,28 @@
     [/^crontab\b/, '/blog/abme/#todo'],
   ];
   const LINKS = {};
-  document.querySelectorAll('.header-links a[target]').forEach(a => {
-    LINKS[a.textContent.replace(/[\[\]]/g, '')] = a.href;
+  document.querySelectorAll('.statusbar a[target]').forEach(a => {
+    LINKS[a.textContent.trim()] = a.href;
   });
+
+  // "Last login" shows the previous visit, like a real login shell
+  const login = document.querySelector('.last-login');
+  if (login) {
+    // remember the previous visit once per browser session so page changes don't reset it
+    let last = null;
+    try {
+      last = sessionStorage.getItem('login-prev');
+      if (last === null) {
+        last = localStorage.getItem('last-login') || '';
+        sessionStorage.setItem('login-prev', last);
+        localStorage.setItem('last-login', String(Date.now()));
+      }
+    } catch (e) {}
+    const when = new Date(last ? +last : Date.now());
+    const stamp = when.toLocaleString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }).replace(',', '') + ' ' +
+      when.toTimeString().slice(0, 8);
+    login.textContent = 'Last login: ' + stamp + ' on ttys001';
+  }
 
   const cmdText = b => b.querySelector('.cmd') ? b.querySelector('.cmd').textContent : '';
   const visible = b => !b.hidden;
@@ -93,7 +112,7 @@
     '<div class="shell-out" aria-live="polite"></div>' +
     '<label class="shell-line"><span class="prompt"></span>' +
     '<input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="shell command" placeholder="type help"></label>';
-  term.appendChild(shell);
+  (term.querySelector('.term-body') || term).appendChild(shell);
   const out = shell.querySelector('.shell-out');
   const input = shell.querySelector('input');
   shell.querySelector('.prompt').textContent = cwd + '$';

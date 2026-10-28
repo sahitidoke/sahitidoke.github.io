@@ -32,8 +32,8 @@ body, body * {
 body {
   font-family: var(--mono-font);
   margin: auto;
-  padding: 20px 16px;
-  max-width: 680px;
+  padding: 24px 16px;
+  max-width: 980px;
   text-align: left;
   background-color: var(--background-color);
   word-wrap: break-word;
@@ -42,14 +42,18 @@ body {
   color: var(--text-color);
   font-size: 15px;
 }
-/* header */
+/* header: login line and typed name at the top of the terminal */
 header {
-  padding-top: 2.5rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 header a {
   color: var(--text-color);
   text-decoration: none;
+}
+.last-login {
+  margin: 0 0 1rem;
+  color: var(--blockquote-color);
+  min-height: 1.65em;
 }
 #header-name {
   font-family: var(--mono-font);
@@ -70,54 +74,13 @@ header a {
 @keyframes blink {
   50% { opacity: 0; }
 }
-.header-links {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.35rem 1rem;
-  margin-top: 0.6rem;
-  font-family: var(--mono-font);
-  font-size: 14px;
-}
-.header-links a {
-  color: var(--blockquote-color);
-}
-.nav-gap {
-  display: none;
-}
-/* on wide screens the links sit in a vertical column left of the content */
-@media (min-width: 1100px) {
-  .header-links {
-    position: absolute;
-    /* line up with the first line of the page content: body padding + header padding, name line, header margin */
-    top: calc(24px + 2.5rem + 2.5rem + 2.5rem);
-    left: calc(50% - 324px - 11rem);
-    width: 8rem;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    gap: 0.3rem;
-    margin-top: 0;
-    z-index: 20;
-  }
-  .nav-gap {
-    display: block;
-    height: 0.6rem;
-  }
-}
-.header-links a:hover {
-  color: var(--text-color);
-}
 .theme-toggle {
   background: none;
   border: none;
   padding: 0;
   font: inherit;
-  color: var(--blockquote-color);
+  color: inherit;
   cursor: pointer;
-}
-.theme-toggle:hover {
-  color: var(--text-color);
 }
 /* type */
 h1, h2, h3, h4, h5, h6 {
@@ -428,6 +391,9 @@ html {
 .term ul.marked.todo li::before    { content: "[ ]"; }
 /* terminal window around the page content */
 .term {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 48px);
   border: 1px solid var(--border-color);
   border-radius: 8px;
   background: var(--term-background);
@@ -462,17 +428,55 @@ html {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.term main,
-.term footer {
-  padding: 0 1.4rem;
+.term-body {
+  flex: 1;
+  width: 100%;
+  max-width: calc(80ch + 3rem);
+  padding: 1.2rem 1.5rem 1.5rem;
+  box-sizing: border-box;
 }
-.term main {
-  padding-top: 1.2rem;
-}
 .term footer {
-  padding-bottom: 1.4rem;
+  margin-top: 3rem;
   font-size: inherit;
   color: var(--text-color);
+}
+/* tmux-style status line doubles as the nav */
+.statusbar {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 1.2ch;
+  padding: 0.15rem 1ch;
+  border-radius: 0 0 7px 7px;
+  background: var(--prompt-color);
+  color: var(--background-color);
+  font-size: 13px;
+  white-space: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.statusbar::-webkit-scrollbar {
+  display: none;
+}
+.statusbar a {
+  color: inherit;
+  text-decoration: none;
+}
+.statusbar a:hover {
+  text-decoration: underline;
+}
+.statusbar .tabs {
+  display: flex;
+  gap: 1ch;
+}
+.statusbar .tabs a.active {
+  font-weight: 600;
+}
+.statusbar .links {
+  display: flex;
+  gap: 1.2ch;
+  margin-left: auto;
 }
 .prompt {
   color: var(--prompt-color);
@@ -488,9 +492,14 @@ main h4::before { content: "#### "; color: var(--prompt-color); }
   color: var(--background-color);
 }
 @media (max-width: 480px) {
-  .term main,
-  .term footer { padding-left: 1rem; padding-right: 1rem; }
+  body { padding: 12px 10px; }
+  .term { min-height: calc(100vh - 24px); }
+  .term-body { padding: 1rem; }
   .term-title { margin-right: 0; text-align: left; }
+}
+@media (max-width: 640px) {
+  .statusbar { flex-wrap: wrap; row-gap: 0; }
+  .statusbar .links { flex-wrap: wrap; margin-left: 0; }
 }
 /* shell: commands, comments and the boot sequence */
 .cmd-block {
@@ -531,8 +540,7 @@ html.booting .cmd-block.typing .np-caret {
 }
 /* live prompt */
 .shell {
-  padding: 0 1.4rem 1.4rem;
-  margin-top: -0.6rem;
+  margin-top: 0.6rem;
 }
 .shell-print {
   margin: 0.2rem 0;
@@ -571,14 +579,11 @@ html.booting .cmd-block.typing .np-caret {
   color: var(--blockquote-color);
   opacity: 0.5;
 }
+.term.cleared header,
 .term.cleared main,
 .term.cleared footer {
   display: none;
 }
 .term.cleared .shell {
-  padding-top: 1.2rem;
   margin-top: 0;
-}
-@media (max-width: 480px) {
-  .shell { padding-left: 1rem; padding-right: 1rem; }
 }

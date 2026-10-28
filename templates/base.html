@@ -33,58 +33,67 @@
 {%- endif %}
 <body data-cwd="{{ cwd }}" style='--prompt: "{{ cwd }}$"'>
   <canvas id="dots" aria-hidden="true"></canvas>
-  <header>
-    <a href="/" class="title" aria-label="sahiti doke">
-      <span id="header-name" class="secret-trigger"><span class="typed" data-text="sahiti doke"></span><span class="caret" aria-hidden="true"></span></span>
-    </a>
-    <script>
-    // type the name out on a fresh visit or reload, but not when moving between pages on the site
-    (function () {
-      const el = document.querySelector("#header-name .typed");
-      const text = el.dataset.text;
-      const nav = performance.getEntriesByType("navigation")[0];
-      const type = nav ? nav.type : "navigate";
-      let internal = false;
-      try { internal = !!document.referrer && new URL(document.referrer).origin === location.origin; } catch (e) {}
-      const animate = type === "reload" || (type === "navigate" && !internal);
-      if (!animate || window.matchMedia("(prefers-reduced-motion: reduce)").matches) { el.textContent = text; return; }
-      let i = 0;
-      function step() {
-        el.textContent = text.slice(0, ++i);
-        if (i < text.length) setTimeout(step, text[i] === " " ? 180 : 90 + Math.random() * 90);
-      }
-      setTimeout(step, 400);
-    })();
-    </script>
-    {% set writing = get_section(path="writing/_index.md") %}
-    <nav class="header-links">
-      <a href="/">home</a>
-      <a href="/blog">portfolio</a>
-      <a href="{{ writing.permalink }}">blog</a>
-      <a href="/blog/abme/">about</a>
-      <span class="nav-gap" aria-hidden="true"></span>
-      <a href="https://github.com/sahitidoke" target="_blank" rel="noopener noreferrer">[github]</a>
-      <a href="https://www.linkedin.com/in/sahiti-doke-2b59b3262/" target="_blank" rel="noopener noreferrer">[linkedin]</a>
-      <a href="https://x.com/i_love_saes" target="_blank" rel="noopener noreferrer">[x]</a>
-      <a href="https://curius.app/sahiti-doke" target="_blank" rel="noopener noreferrer">[curius]</a>
-      <a href="https://cal.com/sahiti-doke-ybeuan" target="_blank" rel="noopener noreferrer">[chat]</a>
-      <a href="https://www.admonymous.co/sahiti-doke" target="_blank" rel="noopener noreferrer">[admonymous]</a>
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">[dark]</button>
-    </nav>
-  </header>
-
+  {% set writing = get_section(path="writing/_index.md") -%}
+  {%- if path == "/" %}{% set tab = "home" %}{% elif path == "/blog/" %}{% set tab = "portfolio" %}{% elif path is starting_with("/writing") %}{% set tab = "blog" %}{% elif path == "/blog/abme/" %}{% set tab = "about" %}{% else %}{% set tab = "" %}{% endif %}
   <div class="term">
     <div class="term-bar">
       <span class="term-lights" aria-hidden="true"><i></i><i></i><i></i></span>
-      <span class="term-title">sahiti@ucsb: {{ cwd }}</span>
+      <span class="term-title">sahiti@ucsb: {{ cwd }} &mdash; bash</span>
     </div>
-    <main>
-      {% block content %} {% endblock %}
-    </main>
+    <div class="term-body">
+      <header>
+        <p class="last-login" aria-hidden="true"></p>
+        <a href="/" class="title" aria-label="sahiti doke">
+          <span id="header-name" class="secret-trigger"><span class="typed" data-text="sahiti doke"></span><span class="caret" aria-hidden="true"></span></span>
+        </a>
+        <script>
+        // type the name out on a fresh visit or reload, but not when moving between pages on the site
+        (function () {
+          const el = document.querySelector("#header-name .typed");
+          const text = el.dataset.text;
+          const nav = performance.getEntriesByType("navigation")[0];
+          const type = nav ? nav.type : "navigate";
+          let internal = false;
+          try { internal = !!document.referrer && new URL(document.referrer).origin === location.origin; } catch (e) {}
+          const animate = type === "reload" || (type === "navigate" && !internal);
+          if (!animate || window.matchMedia("(prefers-reduced-motion: reduce)").matches) { el.textContent = text; return; }
+          let i = 0;
+          function step() {
+            el.textContent = text.slice(0, ++i);
+            if (i < text.length) setTimeout(step, text[i] === " " ? 180 : 90 + Math.random() * 90);
+          }
+          setTimeout(step, 400);
+        })();
+        </script>
+      </header>
 
-    <footer>
-      <span class="prompt">{{ cwd }}$</span> mail <a href="mailto:sdoke@ucsb.edu">sdoke@ucsb.edu</a>
-    </footer>
+      <main>
+        {% block content %} {% endblock %}
+      </main>
+
+      <footer>
+        <span class="prompt">{{ cwd }}$</span> mail <a href="mailto:sdoke@ucsb.edu">sdoke@ucsb.edu</a>
+      </footer>
+    </div>
+
+    <nav class="statusbar">
+      <span class="session">[sahiti]</span>
+      <span class="tabs">
+        <a href="/"{% if tab == "home" %} class="active" aria-current="page"{% endif %}>0:home{% if tab == "home" %}*{% endif %}</a>
+        <a href="/blog/"{% if tab == "portfolio" %} class="active" aria-current="page"{% endif %}>1:portfolio{% if tab == "portfolio" %}*{% endif %}</a>
+        <a href="{{ writing.permalink }}"{% if tab == "blog" %} class="active" aria-current="page"{% endif %}>2:blog{% if tab == "blog" %}*{% endif %}</a>
+        <a href="/blog/abme/"{% if tab == "about" %} class="active" aria-current="page"{% endif %}>3:about{% if tab == "about" %}*{% endif %}</a>
+      </span>
+      <span class="links">
+        <a href="https://github.com/sahitidoke" target="_blank" rel="noopener noreferrer">github</a>
+        <a href="https://www.linkedin.com/in/sahiti-doke-2b59b3262/" target="_blank" rel="noopener noreferrer">linkedin</a>
+        <a href="https://x.com/i_love_saes" target="_blank" rel="noopener noreferrer">x</a>
+        <a href="https://curius.app/sahiti-doke" target="_blank" rel="noopener noreferrer">curius</a>
+        <a href="https://cal.com/sahiti-doke-ybeuan" target="_blank" rel="noopener noreferrer">chat</a>
+        <a href="https://www.admonymous.co/sahiti-doke" target="_blank" rel="noopener noreferrer">admonymous</a>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">[dark]</button>
+      </span>
+    </nav>
   </div>
   <script>
   let clicks = 0;
