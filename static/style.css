@@ -391,3 +391,24 @@ html {
 @media (prefers-reduced-motion: reduce) {
   .caret { animation: none; }
 }
+/* about page lists: ascii markers instead of bullets */
+ul.marked {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 1.5rem;
+}
+ul.marked li {
+  position: relative;
+  padding-left: 2.2em;
+  margin: 0.35rem 0;
+}
+ul.marked li::before {
+  position: absolute;
+  left: 0;
+  font-family: var(--mono-font);
+  color: var(--blockquote-color);
+}
+ul.marked.like li::before    { content: "+"; }
+ul.marked.dislike li::before { content: "-"; }
+ul.marked.neutral li::before { content: "~"; }
+ul.marked.todo li::before    { content: "[ ]"; }
