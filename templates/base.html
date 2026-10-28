@@ -11,7 +11,7 @@
   <link rel="shortcut icon" href="/favicon.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Geist+Mono:wght@400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;600&display=swap">
   <link rel="stylesheet" href="/style.css"/>
   <script defer src="/dots.js"></script>
 
@@ -60,13 +60,19 @@
     </nav>
   </header>
 
-  <main>
-    {% block content %} {% endblock %}
-  </main>
+  <div class="term">
+    <div class="term-bar">
+      <span class="term-lights" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="term-title">sahiti@ucsb: ~{{ current_path | default(value="/") | trim_end_matches(pat="/") }}</span>
+    </div>
+    <main>
+      {% block content %} {% endblock %}
+    </main>
 
-  <footer>
-    <a href="mailto:sdoke@ucsb.edu">sdoke@ucsb.edu</a>
-  </footer>
+    <footer>
+      <span class="prompt">~$</span> mail <a href="mailto:sdoke@ucsb.edu">sdoke@ucsb.edu</a>
+    </footer>
+  </div>
   <script>
   let clicks = 0;
 
