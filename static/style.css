@@ -10,6 +10,7 @@
   --heading-font: 'Geist Mono', ui-monospace, Menlo, monospace;
   --mono-font: 'Geist Mono', ui-monospace, Menlo, monospace;
   --prompt-color: #15803d;
+  --hash-color: #a16207;
   --term-background: rgba(255, 255, 255, 0.88);
 }
 html.dark {
@@ -22,6 +23,7 @@ html.dark {
   --code-text-color: #eee;
   --border-color: #2a2a2a;
   --prompt-color: #4ade80;
+  --hash-color: #d0a215;
   --term-background: rgba(0, 0, 0, 0.85);
 }
 body, body * {
@@ -312,12 +314,11 @@ html {
   font-family: var(--mono-font);
   font-weight: 400;
   font-size: 1em;
-  text-transform: lowercase;
   color: var(--text-color);
   margin: 0 0 0.75rem;
 }
 .eyebrow::before {
-  content: "~$";
+  content: var(--prompt, "~$");
   margin-right: 0.6em;
   color: var(--prompt-color);
 }
@@ -400,31 +401,31 @@ html {
   .caret { animation: none; }
 }
 /* lists: ascii markers instead of bullets */
-main ul:not(.blog-posts) {
+.term ul:not(.blog-posts) {
   list-style: none;
   padding-left: 0;
 }
-main ul:not(.blog-posts) li {
+.term ul:not(.blog-posts) li {
   position: relative;
   padding-left: 2.2em;
 }
-main ul:not(.blog-posts) li::before {
+.term ul:not(.blog-posts) li::before {
   content: ">";
   position: absolute;
   left: 0;
   font-family: var(--mono-font);
   color: var(--blockquote-color);
 }
-main ul.marked {
+.term ul.marked {
   margin: 0 0 1.5rem;
 }
-main ul.marked li {
+.term ul.marked li {
   margin: 0.35rem 0;
 }
-main ul.marked.like li::before    { content: "+"; }
-main ul.marked.dislike li::before { content: "-"; }
-main ul.marked.neutral li::before { content: "~"; }
-main ul.marked.todo li::before    { content: "[ ]"; }
+.term ul.marked.like li::before    { content: "+"; }
+.term ul.marked.dislike li::before { content: "-"; }
+.term ul.marked.neutral li::before { content: "~"; }
+.term ul.marked.todo li::before    { content: "[ ]"; }
 /* terminal window around the page content */
 .term {
   border: 1px solid var(--border-color);
@@ -470,6 +471,7 @@ main ul.marked.todo li::before    { content: "[ ]"; }
 }
 .term footer {
   padding-bottom: 1.4rem;
+  font-size: inherit;
   color: var(--text-color);
 }
 .prompt {
@@ -489,4 +491,94 @@ main h4::before { content: "#### "; color: var(--prompt-color); }
   .term main,
   .term footer { padding-left: 1rem; padding-right: 1rem; }
   .term-title { margin-right: 0; text-align: left; }
+}
+/* shell: commands, comments and the boot sequence */
+.cmd-block {
+  margin: 0 0 1.75rem;
+}
+.cmd-block .eyebrow {
+  margin-top: 0;
+}
+.cmd-block > p:last-child {
+  margin-bottom: 0;
+}
+.comment {
+  color: var(--blockquote-color);
+}
+html.booting .cmd-block:not(.ran):not(.typing) .eyebrow,
+html.booting .cmd-block:not(.ran) > :not(.eyebrow),
+html.booting .cmd-block.typing .comment,
+html.booting .cmd-block.typing .np-caret {
+  visibility: hidden;
+}
+.term ul.commits li {
+  padding-left: 9ch;
+}
+.term ul.commits li::before {
+  content: attr(data-hash);
+  color: var(--hash-color);
+}
+.cal-out {
+  margin: 0 0 1rem;
+  font-family: var(--mono-font);
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--blockquote-color);
+}
+.cal-out mark {
+  background: var(--text-color);
+  color: var(--background-color);
+}
+/* live prompt */
+.shell {
+  padding: 0 1.4rem 1.4rem;
+  margin-top: -0.6rem;
+}
+.shell-print {
+  margin: 0.2rem 0;
+}
+.shell-print.pre {
+  white-space: pre-wrap;
+}
+.shell-print .cmd-block {
+  margin: 0.4rem 0 1rem;
+}
+.shell-out .dim,
+.shell-out .dir {
+  color: var(--blockquote-color);
+}
+.shell-out .dir {
+  color: var(--prompt-color);
+}
+.shell-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6em;
+  cursor: text;
+}
+.shell-line input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font: inherit;
+  color: var(--text-color);
+  caret-color: var(--prompt-color);
+}
+.shell-line input::placeholder {
+  color: var(--blockquote-color);
+  opacity: 0.5;
+}
+.term.cleared main,
+.term.cleared footer {
+  display: none;
+}
+.term.cleared .shell {
+  padding-top: 1.2rem;
+  margin-top: 0;
+}
+@media (max-width: 480px) {
+  .shell { padding-left: 1rem; padding-right: 1rem; }
 }

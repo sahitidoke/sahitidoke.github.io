@@ -4,8 +4,8 @@
 
 {% set writing = get_section(path="writing/_index.md") %}
 
-<section class="eyebrow-section">
-    <h2 class="eyebrow">writing</h2>
+<section class="eyebrow-section cmd-block" id="posts">
+    <h2 class="eyebrow"><span class="cmd">ls -lt ~/blog/</span> <span class="comment"># writing</span></h2>
     <ul class="blog-posts">
         {% for page in writing.pages %}
             <li>
@@ -22,8 +22,8 @@
     </ul>
 </section>
 
-<section class="eyebrow-section">
-    <h2 class="eyebrow">blogs i read</h2>
+<section class="eyebrow-section cmd-block" id="reading">
+    <h2 class="eyebrow"><span class="cmd">cat ~/.newsboat/urls</span> <span class="comment"># blogs i read</span></h2>
     <ul class="eyebrow-list">
         <li><a href="https://ceselder.substack.com" target="_blank" rel="noopener noreferrer">celeste-land</a></li>
         <li><a href="https://newsletter.semianalysis.com/" target="_blank" rel="noopener noreferrer">SemiAnalysis</a></li>

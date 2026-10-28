@@ -3,23 +3,28 @@
 {% block content %}
 {% set writing = get_section(path="writing/_index.md") %}
 <section class="home">
+  <section class="cmd-block" id="readme">
+  <h2 class="eyebrow"><span class="cmd">cat README.md</span></h2>
   <p>
    Greetings! I'm Sahiti, a pretty average second year math student at UC Santa Barbara's <a href="https://ccs.ucsb.edu/">College of Creative Studies</a>. Currently, I think about <a href="https://substack.com/home/post/p-213794544" target="_blank" rel="noopener noreferrer">AI safety</a>. I find ML systems cool and I'm interested in compute verification. I would describe myself as a big proponent of doing things.
   </p>
   <p>
     I keep a <a href="/blog">portfolio</a> of things I've done, and occasionally <a href="{{ writing.permalink }}">write</a>.
   </p>
+  </section>
 
-  <h2 class="eyebrow">what am i up to now?</h2>
+  <section class="cmd-block" id="now">
+  <h2 class="eyebrow"><span class="cmd">ps -u sahiti</span> <span class="comment"># what am i up to now?</span></h2>
   <ul>
     <li>Research fellow @ SPAR; working on model diffing with Stepan Shabalin</li>
     <li>Running the AI Safety group @ UCSB</li>
     <li>Frantically playing through Deltarune and Cyberpunk 2077</li>
   </ul>
+  </section>
 
   {% if config.extra.lastfm_user and config.extra.lastfm_key %}
-  <section id="now-playing" class="np" hidden data-user="{{ config.extra.lastfm_user }}" data-key="{{ config.extra.lastfm_key }}">
-    <h2 class="eyebrow"><span class="np-status">listening now</span><span class="caret np-caret" aria-hidden="true"></span></h2>
+  <section id="now-playing" class="np cmd-block" hidden data-user="{{ config.extra.lastfm_user }}" data-key="{{ config.extra.lastfm_key }}">
+    <h2 class="eyebrow"><span class="cmd">playerctl metadata</span> <span class="comment"># <span class="np-status">listening now</span></span><span class="caret np-caret" aria-hidden="true"></span></h2>
     <a class="np-card" target="_blank" rel="noopener noreferrer">
       <pre class="np-art" aria-hidden="true"></pre>
       <span class="np-meta">
@@ -31,6 +36,9 @@
   </section>
   {% endif %}
 
+  <section class="cmd-block" id="cal">
+  <h2 class="eyebrow"><span class="cmd">cal</span> <span class="comment"># grab a time</span></h2>
   <p>If you want to chat about anything useful, <a href="https://cal.com/sahiti-doke-ybeuan">grab a time</a>! I love meeting new people :]</p>
+  </section>
 </section>
 {% endblock content %}

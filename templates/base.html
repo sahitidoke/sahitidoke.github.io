@@ -14,11 +14,24 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;600&display=swap">
   <link rel="stylesheet" href="/style.css"/>
   <script defer src="/dots.js"></script>
+  <script defer src="/shell.js"></script>
+  <script>
+  // hide command output until shell.js types the commands; never leave it hidden if the script fails
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.documentElement.classList.add("booting");
+    setTimeout(function () { document.documentElement.classList.remove("booting"); }, 5000);
+  }
+  </script>
 
   {% block extra_head %} {% endblock extra_head %}
 </head>
 
-<body>
+{%- set path = current_path | default(value="/") -%}
+{%- if path == "/blog/" -%}{%- set cwd = "~/portfolio" -%}
+{%- elif path == "/blog/abme/" -%}{%- set cwd = "~/about" -%}
+{%- else -%}{%- set cwd = "~" ~ path | replace(from="/writing", to="/blog") | trim_end_matches(pat="/") -%}
+{%- endif %}
+<body data-cwd="{{ cwd }}" style='--prompt: "{{ cwd }}$"'>
   <canvas id="dots" aria-hidden="true"></canvas>
   <header>
     <a href="/" class="title" aria-label="sahiti doke">
@@ -63,14 +76,14 @@
   <div class="term">
     <div class="term-bar">
       <span class="term-lights" aria-hidden="true"><i></i><i></i><i></i></span>
-      <span class="term-title">sahiti@ucsb: ~{{ current_path | default(value="/") | trim_end_matches(pat="/") }}</span>
+      <span class="term-title">sahiti@ucsb: {{ cwd }}</span>
     </div>
     <main>
       {% block content %} {% endblock %}
     </main>
 
     <footer>
-      <span class="prompt">~$</span> mail <a href="mailto:sdoke@ucsb.edu">sdoke@ucsb.edu</a>
+      <span class="prompt">{{ cwd }}$</span> mail <a href="mailto:sdoke@ucsb.edu">sdoke@ucsb.edu</a>
     </footer>
   </div>
   <script>
