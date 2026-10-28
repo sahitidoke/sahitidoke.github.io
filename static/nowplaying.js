@@ -14,7 +14,6 @@
               '&user=' + encodeURIComponent(user) + '&api_key=' + encodeURIComponent(key);
 
   const status = root.querySelector('.np-status');
-  const caret = root.querySelector('.np-caret');
   const card = root.querySelector('.np-card');
   const art = root.querySelector('.np-art');
   const title = root.querySelector('.np-title');
@@ -153,7 +152,6 @@
     playing = track['@attr']?.nowplaying === 'true';
 
     status.textContent = playing ? 'listening now' : 'last played' + (track.date ? ' · ' + ago(+track.date.uts) : '');
-    caret.hidden = !playing;
     setEq(playing && !document.hidden);
     drawArt();
     if (spinning()) wake();

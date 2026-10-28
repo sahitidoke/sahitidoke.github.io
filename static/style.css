@@ -62,18 +62,6 @@ header a {
   letter-spacing: -0.01em;
   cursor: pointer;
 }
-.caret {
-  display: inline-block;
-  width: 0.5em;
-  height: 1.05em;
-  margin-left: 2px;
-  vertical-align: -0.15em;
-  background: var(--text-color);
-  animation: blink 1s steps(1) infinite;
-}
-@keyframes blink {
-  50% { opacity: 0; }
-}
 .theme-toggle {
   background: none;
   border: none;
@@ -307,12 +295,6 @@ html {
   display: flex;
   align-items: baseline;
 }
-.np-caret {
-  width: 0.45em;
-  height: 0.9em;
-  margin-left: 6px;
-  vertical-align: -0.1em;
-}
 .np-card {
   display: flex;
   align-items: center;
@@ -359,9 +341,6 @@ html {
 }
 @media (max-width: 480px) {
   .np-card { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .caret { animation: none; }
 }
 /* lists: ascii markers instead of bullets */
 .term ul:not(.blog-posts) {
@@ -516,8 +495,7 @@ main h4::before { content: "#### "; color: var(--prompt-color); }
 }
 html.booting .cmd-block:not(.ran):not(.typing) .eyebrow,
 html.booting .cmd-block:not(.ran) > :not(.eyebrow),
-html.booting .cmd-block.typing .comment,
-html.booting .cmd-block.typing .np-caret {
+html.booting .cmd-block.typing .comment {
   visibility: hidden;
 }
 .term ul.commits li {
