@@ -391,24 +391,29 @@ html {
 @media (prefers-reduced-motion: reduce) {
   .caret { animation: none; }
 }
-/* about page lists: ascii markers instead of bullets */
-ul.marked {
+/* lists: ascii markers instead of bullets */
+main ul:not(.blog-posts) {
   list-style: none;
   padding-left: 0;
-  margin: 0 0 1.5rem;
 }
-ul.marked li {
+main ul:not(.blog-posts) li {
   position: relative;
   padding-left: 2.2em;
-  margin: 0.35rem 0;
 }
-ul.marked li::before {
+main ul:not(.blog-posts) li::before {
+  content: ">";
   position: absolute;
   left: 0;
   font-family: var(--mono-font);
   color: var(--blockquote-color);
 }
-ul.marked.like li::before    { content: "+"; }
-ul.marked.dislike li::before { content: "-"; }
-ul.marked.neutral li::before { content: "~"; }
-ul.marked.todo li::before    { content: "[ ]"; }
+main ul.marked {
+  margin: 0 0 1.5rem;
+}
+main ul.marked li {
+  margin: 0.35rem 0;
+}
+main ul.marked.like li::before    { content: "+"; }
+main ul.marked.dislike li::before { content: "-"; }
+main ul.marked.neutral li::before { content: "~"; }
+main ul.marked.todo li::before    { content: "[ ]"; }
